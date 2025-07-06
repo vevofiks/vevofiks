@@ -66,7 +66,7 @@ We believe technology should be **reliable**, **transparent**, and **friendly** 
 
 ## 📬 Connect with Us
 
-- 🌐 Website: [🔗 vevofiks](https://vevofiks.com]
+- 🌐 Website:[🔗 vevofiks](https://vevofiks.com)  
 - 📧 Email: info@vevofiks.com
 
 ### 🔗 Social Media
