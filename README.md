@@ -22,7 +22,7 @@ To deliver **trustworthy IoT and software solutions** that create **delightful c
 - 😊 **Friendliness**
 
 ### 🔖 Tagline
-> _"Honest Fixes, Happy Customers."_
+> _"Trust Meets Solutions."_
 
 ---
 
