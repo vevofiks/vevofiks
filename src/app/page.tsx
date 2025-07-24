@@ -1,53 +1,48 @@
-'use client'
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { useSwipeable } from 'react-swipeable';
-
-const services = [
-  { id: 1, title: 'IoT Smart Sensor', description: 'Real-time home monitoring solution' },
-  { id: 2, title: 'Wearable Tracker', description: 'Safety and efficiency on the go' },
-  { id: 3, title: 'Industrial IoT Module', description: 'Optimize your operations' },
-];
+"use client";
+import NavBar from "@/components/NavBar";
+import AboutSection from "@/components/About";
+import HomeSection from "@/components/Home";
+import { useEffect } from "react";
 
 export default function Home() {
-  const router = useRouter();
+    useEffect(() => {
+        const sections = document.querySelectorAll(".section");
 
-  const handlers = useSwipeable({
-    onSwipedRight: () => router.push('/about'),
-    swipeDuration: 500,
-    preventScrollOnSwipe: true,
-  });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    } else {
+                        entry.target.classList.remove("active");
+                    }
+                });
+            },
+            {
+                root: document.querySelector(".sections"),
+                threshold: 0.75,
+            }
+        );
 
-  return (
-    <div className="font-sans grid grid-rows-[auto_1fr_auto] min-h-screen bg-gray-100" {...handlers}>
-      <header className="bg-white p-4">
-        <div className="grid place-items-center">
-          <Image
-            className="dark:invert"
-            src="/logo.png" 
-            alt="Vevofiks Logo"
-            width={180}
-            height={38}
-            priority
-          />
+        sections.forEach((story) => observer.observe(story));
+
+        return () => {
+            sections.forEach((story) => observer.unobserve(story));
+        };
+    }, []);
+
+    return (
+        <div className="font-sans bg-gray-100">
+            <NavBar />
+            {/* Main Content */}
+            <main className="sections w-[100%]">
+                <HomeSection />
+                <AboutSection />
+            </main>
+            {/* Footer */}
+            <footer className="bg-gray-200 p-4 text-center text-gray-500">
+                © 2025 Vevofiks. All rights reserved.
+            </footer>
         </div>
-      </header>
-      {/* Main Content */}
-      <main className="grid grid-cols-1 gap-8 p-6 sm:p-10">
-        <h1 className="text-3xl font-bold text-center col-span-full">Our Services</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 col-span-full">
-          {services.map((service) => (
-            <div key={service.id} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
-              <h2 className="text-xl font-semibold mb-2">{service.title}</h2>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </main>
-      {/* Footer */}
-      <footer className="bg-gray-200 p-4 text-center text-gray-500">
-        © 2025 Vevofiks. All rights reserved.
-      </footer>
-    </div>
-  );
+    );
 }

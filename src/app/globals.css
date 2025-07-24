@@ -24,3 +24,25 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.sections {
+    overflow-x: auto;
+    scrollbar-width: none;
+    display: flex;
+    gap: 1em;
+    scroll-snap-type: x mandatory;
+}
+
+.section {
+    /* background: #3d3d3d; */
+    scroll-snap-align: center;
+    transform: scale(0.8);
+    opacity: 0.5;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+}
+
+.section.active {
+    transform: scale(1);
+    opacity: 1;
+}
