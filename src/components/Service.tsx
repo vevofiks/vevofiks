@@ -20,10 +20,12 @@ const Home: React.FC = () => {
         },
         {
             id: 3,
-            title: "Industrial IoT Module",
-            image: "/app.webp",
+            title: "Software Repair & Upgrade Services",
+            image: "/repair.png",
+            width: 140,
+            height: 140,
             description:
-                "Optimize your operations, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                "We specialize in restoring, refining, and enhancing existing software to ensure it performs at its best. Whether your application is experiencing errors, running slow, or missing critical features, our team works to identify the root cause and implement effective solutions. From fixing bugs and improving stability to upgrading outdated systems and adding new capabilities, we help extend the life of your software and align it with current business needs and technologies.",
         },
     ];
 
@@ -42,7 +44,7 @@ const Home: React.FC = () => {
                 {services.map((service) => (
                     <div
                         key={service.id}
-                        className="bg-[#fff] text-black flex flex-col p-6 rounded-3xl shadow-md hover:shadow-lg transition-shadow items-center text-center"
+                        className="bg-[#fff] text-black flex flex-col gap-2 p-6 rounded-3xl shadow-md hover:shadow-lg transition-shadow items-center text-center"
                     >
                         <h2 className="text-2xl font-semibold mb-2">
                             {service.title}
@@ -50,8 +52,8 @@ const Home: React.FC = () => {
                         <Image
                             className="rounded-full"
                             src={service.image}
-                            width={150}
-                            height={150}
+                            width={service.width || 150}
+                            height={service.width || 150}
                             alt="preview"
                         />
                         <p className="text-gray-800">{service.description}</p>
