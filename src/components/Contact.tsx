@@ -39,7 +39,15 @@ const Contact = () => {
                     Contact
                 </div>
             </div>
-            <h1 className="text-3xl text-center">Let's build something together</h1>
+            <div className="flex flex-col gap-4">
+                <h1 className="text-3xl text-center">
+                    Let's build something together
+                </h1>
+                <p>
+                    Got a project in mind? Just tell us what you need, we’ll
+                    handle the rest, from concept to completion.
+                </p>
+            </div>
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-1 my-[2em] w-[75vw] md:w-[30vw] outline-none"

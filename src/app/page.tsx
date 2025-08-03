@@ -7,8 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
-import { PiHandSwipeLeft } from "react-icons/pi";
-import { motion } from "framer-motion";
+import Alert from "@/components/Alert";
 
 export default function Home() {
     const [isFtrInView, setFtrInView] = useState(false);
@@ -45,33 +44,12 @@ export default function Home() {
             {/* Main Content */}
             <main className="sections w-full pb-[4em]">
                 {/* home sections */}
-                <section className="section min-w-full active">
+                <section className="section flex flex-col gap-[4em] min-w-full active">
                     <Hero />
                     <ServiceSection />
                     <Contact />
                 </section>
-                <motion.div
-                    initial={false}
-                    animate={isFtrInView ? { bottom: 6 * 16 } : { bottom: 16 }}
-                    className="fixed w-full text-black flex justify-center z-20"
-                >
-                    <div className="flex gap-2 items-center bg-white py-2 px-5 rounded-full">
-                        swipe left to know more about us
-                        <motion.div
-                            initial={{ rotate: 0 }}
-                            animate={{ rotate: 20 }}
-                            exit={{ rotate: 0 }}
-                            transition={{
-                                duration: 1,
-                                ease: "linear",
-                                repeat: Infinity,
-                                repeatType: "loop",
-                            }}
-                        >
-                            <PiHandSwipeLeft />
-                        </motion.div>
-                    </div>
-                </motion.div>
+                <Alert isInView={isFtrInView} />
                 {/* about section */}
                 <AboutSection />
             </main>
