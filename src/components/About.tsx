@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import React from "react";
 
-const About = () => {
+const About: React.FC = () => {
 
     return (
         <motion.section

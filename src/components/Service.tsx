@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { LiaWrenchSolid } from "react-icons/lia";
 
-const Home = () => {
+const Home: React.FC = () => {
     const services = [
         {
             id: 1,
@@ -30,7 +30,7 @@ const Home = () => {
     return (
         <section
             id="services"
-            className="flex flex-col gap-16 p-6 sm:p-10 min-w-[100%]"
+            className="flex flex-col gap-12 p-6 sm:p-10 min-w-[100%]"
         >
             <div className="flex justify-center">
                 <div className="flex items-center gap-1.5 text-sm bg-white rounded-2xl text-black py-0.5 px-2.5">

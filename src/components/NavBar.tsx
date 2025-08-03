@@ -4,7 +4,7 @@ import React from "react";
 import { LuPhoneCall } from "react-icons/lu";
 import { IoInformationCircleOutline } from "react-icons/io5";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
     return (
         <header id="top" className="bg-gradient-to-b from-black/25 px-5 md:px-5 md:py-4">
             <ul className="flex justify-between items-center py-4 md:py-0">
