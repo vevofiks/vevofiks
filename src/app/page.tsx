@@ -22,7 +22,7 @@ export default function Home() {
 
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry, i) => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("active");
                     } else {
@@ -70,7 +70,7 @@ export default function Home() {
                 el.removeEventListener("scroll", handleScroll);
             }
         };
-    }, []);
+    }, [router]);
 
     return (
         <div className="font-sans bg-[#0B1628] pattern">

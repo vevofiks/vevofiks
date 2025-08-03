@@ -45,7 +45,7 @@ const Contact = () => {
                     Let's build something together
                 </h1>
                 <p>
-                    Got a project in mind? Just tell us what you need, we’ll
+                    Got a project in mind? Just tell us what you need, we&apos;ll
                     handle the rest, from concept to completion.
                 </p>
             </div>
