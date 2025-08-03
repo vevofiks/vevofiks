@@ -1,11 +1,35 @@
 import Image from "next/image";
-import React from "react";
+import React, { Dispatch, RefObject, SetStateAction, useEffect, useRef } from "react";
 import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { LuFacebook } from "react-icons/lu";
 
-const Footer = () => {
+interface FooterTypes {
+    setIsInView: Dispatch<SetStateAction<boolean>>;
+}
+
+const Footer = ({ setIsInView }: FooterTypes) => {
+    const footerRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            {
+                root: null,
+                threshold: 0.1, // Trigger when 10% is visible
+            }
+        );
+
+        const el = footerRef.current;
+        if (el) observer.observe(el);
+
+        return () => {
+            if (el) observer.unobserve(el);
+        };
+    }, []);
+
     return (
-        <footer className="flex items-center bg-black text-gray-500">
+        <footer ref={footerRef} className="flex items-center bg-black text-gray-500">
             <div className="flex-1 items-center">
                 <Image
                     src="/full_logo.svg"

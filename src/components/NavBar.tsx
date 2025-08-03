@@ -14,7 +14,7 @@ const NavBar = () => {
                     height={50}
                     priority
                 />
-                <a href="#contact" className="scroll-smooth">
+                <a href="#contact">
                     <li className="flex items-center gap-2 text-[1.1em] bg-white rounded-2xl text-black py-1 px-3">
                         <LuPhoneCall size={18} />
                         Contact Us

@@ -3,7 +3,7 @@
 import NavBar from "@/components/NavBar";
 import AboutSection from "@/components/About";
 import ServiceSection from "@/components/Service";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
@@ -11,6 +11,8 @@ import { PiHandSwipeLeft } from "react-icons/pi";
 import { motion } from "framer-motion";
 
 export default function Home() {
+    const [isFtrInView, setFtrInView] = useState(false);
+
     useEffect(() => {
         const sections = document.querySelectorAll(".section");
 
@@ -38,17 +40,21 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="font-sans bg-[#0B1628]">
+        <div className={"font-sans bg-[#0B1628]"}>
             <NavBar />
             {/* Main Content */}
-            <main className="sections w-full ">
+            <main className="sections w-full pb-[4em]">
                 {/* home sections */}
                 <section className="section min-w-full">
                     <Hero />
                     <ServiceSection />
                     <Contact />
                 </section>
-                <div className="fixed w-full bottom-[1em] text-black flex justify-center z-20">
+                <motion.div
+                    initial={false}
+                    animate={isFtrInView ? { bottom: 6 * 16 } : { bottom: 0 }}
+                    className="fixed w-full text-black flex justify-center z-20"
+                >
                     <div className="flex gap-2 items-center bg-white py-2 px-5 rounded-full">
                         swipe right to know more about us
                         <motion.div
@@ -65,12 +71,12 @@ export default function Home() {
                             <PiHandSwipeLeft />
                         </motion.div>
                     </div>
-                </div>
+                </motion.div>
                 {/* about section */}
                 <AboutSection />
             </main>
             {/* Footer */}
-            <Footer />
+            <Footer setIsInView={setFtrInView} />
         </div>
     );
 }
