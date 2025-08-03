@@ -1,6 +1,5 @@
 "use client";
 
-import NavBar from "@/components/NavBar";
 import AboutSection from "@/components/About";
 import ServiceSection from "@/components/Service";
 import { useEffect, useRef, useState } from "react";
@@ -74,7 +73,6 @@ export default function Home() {
 
     return (
         <div className="font-sans bg-[#0B1628] pattern">
-            <NavBar />
             {/* Main Content */}
             <main ref={scrollRef} className="sections w-full pb-[4em]">
                 {/* home sections */}
