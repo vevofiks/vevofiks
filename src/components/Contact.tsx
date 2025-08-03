@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { LiaTelegramPlane } from "react-icons/lia";
 import { LuPhoneCall } from "react-icons/lu";
 
 const Contact = () => {
@@ -40,7 +41,7 @@ const Contact = () => {
                 </div>
             </div>
             <div className="flex flex-col gap-4">
-                <h1 className="text-3xl text-center">
+                <h1 className="text-4xl text-center">
                     Let's build something together
                 </h1>
                 <p>
@@ -74,8 +75,9 @@ const Contact = () => {
                 ></textarea>
                 <button
                     type="submit"
-                    className="bg-black dark:bg-white text-white dark:text-black rounded-2xl py-2 my-4 cursor-pointer"
+                    className="flex justify-center items-center gap-1 bg-black dark:bg-white text-white text-lg dark:text-black rounded-xl py-1 my-4 cursor-pointer"
                 >
+                    <LiaTelegramPlane size={20}/>
                     send
                 </button>
             </form>

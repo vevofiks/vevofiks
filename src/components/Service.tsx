@@ -47,7 +47,13 @@ const Home = () => {
                         <h2 className="text-2xl font-semibold mb-2">
                             {service.title}
                         </h2>
-                        <Image src={service.image} width={150} height={150} alt="preview"/>
+                        <Image
+                            className="rounded-full"
+                            src={service.image}
+                            width={150}
+                            height={150}
+                            alt="preview"
+                        />
                         <p className="text-gray-800">{service.description}</p>
                     </div>
                 ))}
