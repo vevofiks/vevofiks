@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { MdOutlineMedicalServices } from "react-icons/md";
 
@@ -5,19 +6,24 @@ const Home = () => {
     const services = [
         {
             id: 1,
-            title: "IoT Smart Sensor",
-            description: "Real-time home monitoring solution",
+            title: "Web Development",
+            image: "/web.jpg",
+            description:
+                "We specialize in building modern, responsive, and high-performing web applications tailored to your business needs. From intuitive user interfaces to powerful backend systems, our team delivers scalable solutions that work seamlessly across devices and platforms. Whether you're launching a new product, automating internal processes, or upgrading an existing system, we bring your vision to life with clean code, agile development, and a focus on user experience.",
         },
         {
             id: 2,
-            title: "Wearable Tracker",
-            description: "Safety and efficiency on the go",
+            title: "Mobile App Development",
+            image: "/app.webp",
+            description:
+                "We design and develop custom mobile apps that deliver seamless performance, intuitive user experiences, and real business value. Whether you need a native iOS or Android app or a cross platform solution we build scalable, secure, and feature-rich applications that connect you with users on the go. From concept to launch, we help turn your ideas into engaging mobile experiences.",
         },
         {
             id: 3,
             title: "Industrial IoT Module",
+            image: "/app.webp",
             description:
-                "Optimize your operations, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                "Optimize your operations, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         },
     ];
 
@@ -36,11 +42,12 @@ const Home = () => {
                 {services.map((service) => (
                     <div
                         key={service.id}
-                        className="bg-[#277CE2] text-black flex flex-col p-4 rounded-3xl shadow-md hover:shadow-lg transition-shadow items-center text-center"
+                        className="bg-[#fff] text-black flex flex-col p-6 rounded-3xl shadow-md hover:shadow-lg transition-shadow items-center text-center"
                     >
-                        <h2 className="text-xl font-semibold mb-2">
+                        <h2 className="text-2xl font-semibold mb-2">
                             {service.title}
                         </h2>
+                        <Image src={service.image} width={150} height={150} alt="preview"/>
                         <p className="text-gray-800">{service.description}</p>
                     </div>
                 ))}

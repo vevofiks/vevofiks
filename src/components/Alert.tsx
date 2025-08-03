@@ -9,7 +9,7 @@ const Alert = ({ isInView }: { isInView: boolean }) => {
             animate={isInView ? { bottom: 6 * 16 } : { bottom: 16 }}
             className="fixed w-full text-black flex justify-center z-20"
         >
-            <div className="flex gap-2 items-center bg-white py-2 px-5 rounded-full">
+            <div className="flex gap-2 items-center bg-white py-2 px-5 rounded-full shadow-[0_1px_10px] shadow-black/75">
                 swipe left to know more about us
                 <motion.div
                     initial={{ rotate: 0 }}
