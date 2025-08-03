@@ -45,18 +45,18 @@ export default function Home() {
             {/* Main Content */}
             <main className="sections w-full pb-[4em]">
                 {/* home sections */}
-                <section className="section min-w-full">
+                <section className="section min-w-full active">
                     <Hero />
                     <ServiceSection />
                     <Contact />
                 </section>
                 <motion.div
                     initial={false}
-                    animate={isFtrInView ? { bottom: 6 * 16 } : { bottom: 0 }}
+                    animate={isFtrInView ? { bottom: 6 * 16 } : { bottom: 16 }}
                     className="fixed w-full text-black flex justify-center z-20"
                 >
                     <div className="flex gap-2 items-center bg-white py-2 px-5 rounded-full">
-                        swipe right to know more about us
+                        swipe left to know more about us
                         <motion.div
                             initial={{ rotate: 0 }}
                             animate={{ rotate: 20 }}

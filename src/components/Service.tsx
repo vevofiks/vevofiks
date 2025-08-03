@@ -38,7 +38,7 @@ const Home = () => {
                         <h2 className="text-xl font-semibold mb-2">
                             {service.title}
                         </h2>
-                        <p className="text-gray-600">{service.description}</p>
+                        <p className="text-gray-800">{service.description}</p>
                     </div>
                 ))}
             </div>

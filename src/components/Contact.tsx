@@ -39,10 +39,10 @@ const Contact = () => {
                     Contact
                 </div>
             </div>
-            <h1 className="text-3xl HN-medium">Let's build something together</h1>
+            <h1 className="text-3xl text-center">Let's build something together</h1>
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-1 my-[2em] w-[50vw] md:w-[30vw] outline-none"
+                className="flex flex-col gap-1 my-[2em] w-[75vw] md:w-[30vw] outline-none"
             >
                 <label htmlFor="naam">Name</label>
                 <input
