@@ -6,7 +6,7 @@ import { IoInformationCircleOutline } from "react-icons/io5";
 
 const NavBar = () => {
     return (
-        <header className="bg-gradient-to-b from-black/25 px-5 md:px-5 md:py-4">
+        <header id="top" className="bg-gradient-to-b from-black/25 px-5 md:px-5 md:py-4">
             <ul className="flex justify-between items-center py-4 md:py-0">
                 <Link href={"/"}>
                     <Image

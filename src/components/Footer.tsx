@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { Dispatch, RefObject, SetStateAction, useEffect, useRef } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { LuFacebook } from "react-icons/lu";
 
@@ -12,7 +12,7 @@ const Footer = ({ setIsInView }: FooterTypes) => {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setIsInView(entry.isIntersecting);
+                setIsInView(() => entry.isIntersecting);
             },
             {
                 root: null,
@@ -29,7 +29,10 @@ const Footer = ({ setIsInView }: FooterTypes) => {
     }, []);
 
     return (
-        <footer ref={footerRef} className="flex items-center bg-black text-gray-500 px-2 py-4 md:px-6">
+        <footer
+            ref={footerRef}
+            className="flex items-center bg-black text-gray-500 px-2 py-4 md:px-6"
+        >
             <div className="flex-1 items-center">
                 <Image
                     className="hidden md:block w-[8em]"

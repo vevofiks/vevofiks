@@ -1,12 +1,23 @@
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import React from "react";
 import { PiHandSwipeLeft } from "react-icons/pi";
 
-const Alert = ({ isInView }: { isInView: boolean }) => {
+interface AlertType {
+    shouldIt: boolean;
+    isInView: boolean;
+}
+
+const Alert = ({ shouldIt, isInView }: AlertType) => {
+    const some = shouldIt
+        ? isInView
+            ? { bottom: 6 * 16 }
+            : { bottom: 16 }
+        : { bottom: -100 };
+
     return (
         <motion.div
             initial={false}
-            animate={isInView ? { bottom: 6 * 16 } : { bottom: 16 }}
+            animate={some}
             className="fixed w-full text-black flex justify-center z-20"
         >
             <div className="flex gap-2 items-center bg-white py-2 px-5 rounded-full shadow-[0_1px_10px] shadow-black/75">
