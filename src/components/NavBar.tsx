@@ -6,7 +6,7 @@ import { IoInformationCircleOutline } from "react-icons/io5";
 
 const NavBar = () => {
     return (
-        <header className="bg-[#0B1628] px-5 md:px-5 md:py-4">
+        <header className="bg-gradient-to-b from-black/25 px-5 md:px-5 md:py-4">
             <ul className="flex justify-between items-center py-4 md:py-0">
                 <Link href={"/"}>
                     <Image
@@ -28,13 +28,13 @@ const NavBar = () => {
                 </Link>
                 <div className="flex gap-2 md:gap-4">
                     <a href="#about">
-                        <li className="flex items-center gap-1.5 text-sm md:text-[1.1em] bg-white rounded-2xl text-black h-full py-1 px-2 md:px-3">
+                        <li className="flex items-center gap-1.5 text-sm md:text-[1.05em] bg-white rounded-2xl text-black h-full py-1 px-2 md:px-3">
                             <IoInformationCircleOutline size={22} />
                             About Us
                         </li>
                     </a>
                     <a href="#contact">
-                        <li className="flex items-center gap-2.5 text-sm md:text-[1.1em] bg-white rounded-2xl text-black h-full py-1 px-2 md:px-3">
+                        <li className="flex items-center gap-2.5 text-sm md:text-[1.05em] bg-white rounded-2xl text-black h-full py-1 px-2 md:px-3">
                             <LuPhoneCall size={17} />
                             Contact Us
                         </li>

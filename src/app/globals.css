@@ -2,7 +2,7 @@
 
 :root {
   --background: #0B1628;
-  --foreground: #e8e8e8;
+  --foreground: #fff;
 }
 
 @theme {
@@ -49,4 +49,11 @@ html {
 .section.active {
   /* transform: scale(1); */
   opacity: 1;
+}
+
+.pattern {
+  background-color: #0B1628;
+  /* opacity: 0.2; */
+  background-image: linear-gradient(#277CE210 3px, transparent 3px), linear-gradient(to right, #277CE210 3px, #0b162800 3px);
+  background-size: 80px 80px;
 }

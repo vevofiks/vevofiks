@@ -27,7 +27,7 @@ export default function Home() {
             },
             {
                 root: document.querySelector(".sections"),
-                threshold: 0.75,
+                threshold: 0.5,
             }
         );
 
@@ -39,7 +39,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className={"font-sans bg-[#0B1628]"}>
+        <div className="font-sans bg-[#0B1628] pattern">
             <NavBar />
             {/* Main Content */}
             <main className="sections w-full pb-[4em]">

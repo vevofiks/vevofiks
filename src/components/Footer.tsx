@@ -16,7 +16,7 @@ const Footer = ({ setIsInView }: FooterTypes) => {
             },
             {
                 root: null,
-                threshold: 0.1, // Trigger when 10% is visible
+                threshold: 0.5,
             }
         );
 

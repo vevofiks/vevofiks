@@ -1,9 +1,16 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
-    return <section>
-        <h1 className="text-[2.5em] font-semibold text-center">VEVOFIKS</h1>
-    </section>
+    return (
+        <section className="mt-[6em] flex flex-col gap-4 items-center">
+            <h1 className="text-6xl text-center">VEVOFIKS</h1>
+            <p className="text-center px-6 md:w-1/2 text-gray-300">
+                We create innovative software that helps businesses move faster,
+                work smarter, and stay ahead in a digital-first world.
+            </p>
+        </section>
+    );
 };
 
 export default Hero;
