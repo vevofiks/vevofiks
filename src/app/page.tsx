@@ -1,8 +1,14 @@
 "use client";
+
 import NavBar from "@/components/NavBar";
 import AboutSection from "@/components/About";
-import HomeSection from "@/components/Home";
+import ServiceSection from "@/components/Service";
 import { useEffect } from "react";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import Contact from "@/components/Contact";
+import { PiHandSwipeLeft } from "react-icons/pi";
+import { motion } from "framer-motion";
 
 export default function Home() {
     useEffect(() => {
@@ -32,17 +38,39 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="font-sans bg-gray-100">
+        <div className="font-sans bg-[#0B1628]">
             <NavBar />
             {/* Main Content */}
-            <main className="sections w-[100%]">
-                <HomeSection />
+            <main className="sections w-full ">
+                {/* home sections */}
+                <section className="section min-w-full">
+                    <Hero />
+                    <ServiceSection />
+                    <Contact />
+                </section>
+                <div className="fixed w-full bottom-[1em] text-black flex justify-center z-20">
+                    <div className="flex gap-2 items-center bg-white py-2 px-5 rounded-full">
+                        swipe right to know more about us
+                        <motion.div
+                            initial={{ rotate: 0 }}
+                            animate={{ rotate: 20 }}
+                            exit={{ rotate: 0 }}
+                            transition={{
+                                duration: 1,
+                                ease: "linear",
+                                repeat: Infinity,
+                                repeatType: "loop",
+                            }}
+                        >
+                            <PiHandSwipeLeft />
+                        </motion.div>
+                    </div>
+                </div>
+                {/* about section */}
                 <AboutSection />
             </main>
             {/* Footer */}
-            <footer className="bg-gray-200 p-4 text-center text-gray-500">
-                © 2025 Vevofiks. All rights reserved.
-            </footer>
+            <Footer />
         </div>
     );
 }

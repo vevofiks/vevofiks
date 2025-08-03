@@ -1,4 +1,5 @@
 import React from "react";
+import { MdOutlineMedicalServices } from "react-icons/md";
 
 const Home = () => {
     const services = [
@@ -21,15 +22,18 @@ const Home = () => {
     ];
 
     return (
-        <section className="grid grid-cols-1 gap-8 p-6 sm:p-10 min-w-[100%] section">
-            <h1 className="text-3xl font-bold text-center col-span-full">
-                Our Services
-            </h1>
+        <section id="services" className="grid grid-cols-1 gap-8 p-6 sm:p-10 min-w-[100%]">
+            <div className="flex justify-center">
+                <div className="flex items-center gap-2 text-sm bg-white rounded-2xl text-black py-0.5 px-2.5">
+                    <MdOutlineMedicalServices />
+                    Services
+                </div>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 col-span-full">
                 {services.map((service) => (
                     <div
                         key={service.id}
-                        className="bg-white flex flex-col p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow items-center text-center"
+                        className="bg-[#277CE2] text-black flex flex-col p-4 rounded-3xl shadow-md hover:shadow-lg transition-shadow items-center text-center"
                     >
                         <h2 className="text-xl font-semibold mb-2">
                             {service.title}
