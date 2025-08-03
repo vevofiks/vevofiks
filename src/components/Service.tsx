@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { MdOutlineMedicalServices } from "react-icons/md";
+import { LiaWrenchSolid } from "react-icons/lia";
 
 const Home = () => {
     const services = [
@@ -30,12 +30,12 @@ const Home = () => {
     return (
         <section
             id="services"
-            className="grid grid-cols-1 gap-8 p-6 sm:p-10 min-w-[100%]"
+            className="flex flex-col gap-16 p-6 sm:p-10 min-w-[100%]"
         >
             <div className="flex justify-center">
-                <div className="flex items-center gap-2 text-sm bg-white rounded-2xl text-black py-0.5 px-2.5">
-                    <MdOutlineMedicalServices />
-                    Services
+                <div className="flex items-center gap-1.5 text-sm bg-white rounded-2xl text-black py-0.5 px-2.5">
+                    <LiaWrenchSolid size={19} />
+                    Our Services
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 col-span-full">

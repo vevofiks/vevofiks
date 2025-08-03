@@ -44,7 +44,7 @@ export default function Home() {
             {/* Main Content */}
             <main className="sections w-full pb-[4em]">
                 {/* home sections */}
-                <section className="section flex flex-col gap-[4em] min-w-full active">
+                <section className="section flex flex-col gap-[8em] min-w-full active">
                     <Hero />
                     <ServiceSection />
                     <Contact />
