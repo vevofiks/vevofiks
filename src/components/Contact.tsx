@@ -42,7 +42,7 @@ const Contact = () => {
             </div>
             <div className="flex flex-col gap-4">
                 <h1 className="text-4xl text-center">
-                    Let's build something together
+                    Let&apos;s build something together
                 </h1>
                 <p>
                     Got a project in mind? Just tell us what you need, we&apos;ll

@@ -26,7 +26,7 @@ const Footer = ({ setIsInView }: FooterTypes) => {
         return () => {
             if (el) observer.unobserve(el);
         };
-    }, []);
+    }, [setIsInView]);
 
     return (
         <footer
