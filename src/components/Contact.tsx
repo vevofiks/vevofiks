@@ -34,12 +34,6 @@ const Contact = () => {
 
     return (
         <section id="contact" className="flex gap-4 flex-col items-center">
-            <div className="flex justify-center">
-                <div className="flex items-center gap-2 text-sm bg-white rounded-2xl text-black py-0.5 px-2.5">
-                    <LuPhoneCall />
-                    Contact
-                </div>
-            </div>
             <div className="flex flex-col gap-4">
                 <h1 className="text-4xl text-center">
                     Let&apos;s build something together

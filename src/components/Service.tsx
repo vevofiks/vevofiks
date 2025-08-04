@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { LiaWrenchSolid } from "react-icons/lia";
 
 const Home: React.FC = () => {
     const services = [
@@ -27,6 +26,13 @@ const Home: React.FC = () => {
             description:
                 "We specialize in restoring, refining, and enhancing existing software to ensure it performs at its best. Whether your application is experiencing errors, running slow, or missing critical features, our team works to identify the root cause and implement effective solutions. From fixing bugs and improving stability to upgrading outdated systems and adding new capabilities, we help extend the life of your software and align it with current business needs and technologies.",
         },
+        {
+            id: 4,
+            title: "Industrial IoT Module",
+            image: "/iot.png",
+            description:
+                "Enhance your industrial operations with our cutting-edge IoT modules. We design and implement smart solutions that optimize efficiency, monitor performance in real-time, and reduce downtime. Our reliable technology integrates seamlessly with your existing systems, providing actionable insights and supporting sustainable growth. Trust us to deliver innovative IoT solutions tailored to your industry’s unique challenges.",
+        },
     ];
 
     return (
@@ -34,12 +40,6 @@ const Home: React.FC = () => {
             id="services"
             className="flex flex-col gap-12 p-6 sm:p-10 min-w-[100%]"
         >
-            <div className="flex justify-center">
-                <div className="flex items-center gap-1.5 text-sm bg-white rounded-2xl text-black py-0.5 px-2.5">
-                    <LiaWrenchSolid size={19} />
-                    Our Services
-                </div>
-            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 col-span-full">
                 {services.map((service) => (
                     <div
