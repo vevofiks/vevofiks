@@ -36,21 +36,22 @@ html {
 }
 
 
-/* .sections {
-  overflow-x: auto;
-  scrollbar-width: none;
+@keyframes scrollSmooth {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1.5rem)); 
+  }
+}
+
+.animate-scroll-smooth {
   display: flex;
-  gap: 1em;
-  scroll-snap-type: x mandatory;
+  gap: 1.5rem; /* Same as gap-6 */
+  animation: scrollSmooth 12.5s linear infinite;
+  /* width: fit-content; */
 }
 
-.section {
-  scroll-snap-align: center;
-  opacity: 0;
-  transition: transform 0.3s linear, opacity 0.3s linear;
+.animate-scroll-smooth:hover {
+  animation-play-state: paused;
 }
-
-.section.active {
-  opacity: 1;
-} */
-
