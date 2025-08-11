@@ -34,10 +34,10 @@ const Contact = () => {
     return (
         <section id="contact" className="flex gap-4 flex-col items-center">
             <div className="flex flex-col gap-4">
-                <h1 className="text-4xl text-center">
+                <h1 className="text-3xl md:text-4xl text-center">
                     Let&apos;s build something together
                 </h1>
-                <p className="text-center">
+                <p className="text-center text-sm md:text-base px-2">
                     Got a project in mind? Just tell us what you need,
                     we&apos;ll handle the rest, from concept to completion.
                 </p>

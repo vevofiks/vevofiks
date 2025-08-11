@@ -5,6 +5,7 @@ import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const About: React.FC = () => {
     const { setPage, isSwiped } = useAppContext();
@@ -27,10 +28,10 @@ const About: React.FC = () => {
                 className="min-w-[100%] flex flex-col items-center gap-[10em] mt-[6em] select-none"
             >
                 <div className="flex flex-col gap-10">
-                    <h1 className="text-5xl font-bold text-center">
+                    <h1 className="text-3xl md:text-4xl font-bold text-center">
                         About Vevofiks
                     </h1>
-                    <p className="text-center text-gray-400 md:max-w-2xl px-2 md:px-0" >
+                    <p className="text-center text-sm md:text-base text-gray-400 md:max-w-2xl px-2 md:px-0">
                         Vevofiks, founded on July 23, 2025, is dedicated to
                         delivering honest fixes and happy customer experiences
                         through innovative IoT solutions. Our core values—trust,
@@ -39,8 +40,8 @@ const About: React.FC = () => {
                     </p>
                 </div>
                 {/* partners section */}
-                <div className="flex flex-col gap-[4em] mb-[10em] overflow-hidden">
-                    <h1 className="text-4xl text-center">Our brand partners</h1>
+                <div className="flex flex-col gap-[4em] mb-[20em] md:mb-[10em] overflow-hidden">
+                    <h1 className="text-3xl md:text-4xl text-center">Our brand partners</h1>
 
                     <div className="relative overflow-hidden w-full">
                         <div className="absolute z-50 top-0 left-0 h-full w-20 bg-gradient-to-r from-[#0B1628] to-transparent pointer-events-none" />
@@ -48,91 +49,32 @@ const About: React.FC = () => {
 
                         <div className="animate-scroll-smooth w-screen md:w-[33em]">
                             {/* Single container with both sets */}
-                            <div className="flex gap-6 items-center">
-                                <Image
-                                    className="w-[3.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/ugency.png"
-                                    height={100}
-                                    width={100}
-                                    alt="ugency"
-                                />
-                                <Image
-                                    className="w-[7.5em] h-[2.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/goprogen.png"
-                                    height={100}
-                                    width={100}
-                                    alt="goprogen"
-                                />
-                            </div>
-
-                            {/* Exact duplicate */}
-                            <div className="flex gap-6 items-center">
-                                <Image
-                                    className="w-[3.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/ugency.png"
-                                    height={100}
-                                    width={100}
-                                    alt="ugency"
-                                />
-                                <Image
-                                    className="w-[7.5em] h-[2.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/goprogen.png"
-                                    height={100}
-                                    width={100}
-                                    alt="goprogen"
-                                />
-                            </div>
-                            {/* Exact duplicate */}
-                            <div className="flex gap-6 items-center">
-                                <Image
-                                    className="w-[3.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/ugency.png"
-                                    height={100}
-                                    width={100}
-                                    alt="ugency"
-                                />
-                                <Image
-                                    className="w-[7.5em] h-[2.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/goprogen.png"
-                                    height={100}
-                                    width={100}
-                                    alt="goprogen"
-                                />
-                            </div>
-                            {/* Exact duplicate */}
-                            <div className="flex gap-6 items-center">
-                                <Image
-                                    className="w-[3.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/ugency.png"
-                                    height={100}
-                                    width={100}
-                                    alt="ugency"
-                                />
-                                <Image
-                                    className="w-[7.5em] h-[2.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/goprogen.png"
-                                    height={100}
-                                    width={100}
-                                    alt="goprogen"
-                                />
-                            </div>
-                            {/* Exact duplicate */}
-                            <div className="flex gap-6 items-center">
-                                <Image
-                                    className="w-[3.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/ugency.png"
-                                    height={100}
-                                    width={100}
-                                    alt="ugency"
-                                />
-                                <Image
-                                    className="w-[7.5em] h-[2.5em] flex-shrink-0 saturate-0 hover:saturate-100 duration-200"
-                                    src="/partners/goprogen.png"
-                                    height={100}
-                                    width={100}
-                                    alt="goprogen"
-                                />
-                            </div>
+                            {new Array(5).fill(0).map((item, i) => (
+                                <div key={i} className="flex gap-8 items-center">
+                                    <Link
+                                        className="flex items-center justify-center w-[3em] saturate-0 hover:saturate-100 duration-200"
+                                        href="https://www.instagram.com/ugency.in?igsh=MTlvY3o1c3J1aTltMg=="
+                                    >
+                                        <Image
+                                            src="/partners/ugency.png"
+                                            height={100}
+                                            width={100}
+                                            alt="ugency"
+                                        />
+                                    </Link>
+                                    <Link
+                                        className="flex items-center justify-center w-[7.5em] saturate-0 hover:saturate-100 duration-200"
+                                        href="https://goprogen.com/"
+                                    >
+                                        <Image
+                                            src="/partners/goprogen.png"
+                                            height={100}
+                                            width={100}
+                                            alt="goprogen"
+                                        />
+                                    </Link>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
