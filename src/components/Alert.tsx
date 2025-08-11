@@ -4,11 +4,10 @@ import { PiHandSwipeLeft } from "react-icons/pi";
 import { useAppContext } from "@/context/AppContext";
 
 interface AlertType {
-    shouldIt: boolean;
     isInView: boolean;
 }
 
-const Alert = ({ shouldIt, isInView }: AlertType) => {
+const Alert = ({ isInView }: AlertType) => {
     const { page } = useAppContext();
 
     const pages = [
@@ -16,16 +15,10 @@ const Alert = ({ shouldIt, isInView }: AlertType) => {
         "swipe right to go back",
     ];
 
-    const some = shouldIt
-        ? isInView
-            ? { bottom: 6 * 16 }
-            : { bottom: 16 }
-        : { bottom: -100 };
-
     return (
         <motion.div
             initial={false}
-            animate={some}
+            animate={isInView ? { bottom: 6 * 16 } : { bottom: 16 }}
             className="fixed w-full text-black flex justify-center z-20"
         >
             <motion.div
