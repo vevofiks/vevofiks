@@ -19,10 +19,10 @@ const Home: React.FC = () => {
         },
         {
             id: 3,
-            title: "Software Repair & Upgrade Services",
+            title: "Software Repair & Upgrade",
             image: "/repair.png",
-            width: 140,
-            height: 140,
+            width: 130,
+            height: 130,
             description:
                 "We specialize in restoring, refining, and enhancing existing software to ensure it performs at its best. Whether your application is experiencing errors, running slow, or missing critical features, our team works to identify the root cause and implement effective solutions. From fixing bugs and improving stability to upgrading outdated systems and adding new capabilities, we help extend the life of your software and align it with current business needs and technologies.",
         },
@@ -38,13 +38,13 @@ const Home: React.FC = () => {
     return (
         <section
             id="services"
-            className="flex flex-col gap-12 p-6 sm:p-10 min-w-[100%]"
+            className="flex flex-col gap-12 md:px-[10em] px-10 min-w-[100%]"
         >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 col-span-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 col-span-full">
                 {services.map((service) => (
                     <div
                         key={service.id}
-                        className="bg-[#fff] text-black flex flex-col gap-2 p-6 rounded-3xl shadow-md hover:shadow-lg transition-shadow items-center text-center"
+                        className="bg-[#fff] text-black flex flex-col gap-2 p-4 rounded-3xl shadow-md hover:shadow-lg transition-shadow items-center text-center"
                     >
                         <h2 className="text-2xl font-semibold mb-2">
                             {service.title}
@@ -52,11 +52,11 @@ const Home: React.FC = () => {
                         <Image
                             className="rounded-full"
                             src={service.image}
-                            width={service.width || 150}
-                            height={service.width || 150}
+                            width={service.width || 140}
+                            height={service.width || 140}
                             alt="preview"
                         />
-                        <p className="text-gray-800">{service.description}</p>
+                        <p className="text-gray-800 text-sm">{service.description}</p>
                     </div>
                 ))}
             </div>

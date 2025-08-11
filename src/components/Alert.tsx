@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { PiHandSwipeLeft } from "react-icons/pi";
+import { useAppContext } from "@/context/AppContext";
 
 interface AlertType {
     shouldIt: boolean;
@@ -8,6 +9,13 @@ interface AlertType {
 }
 
 const Alert = ({ shouldIt, isInView }: AlertType) => {
+    const { page } = useAppContext();
+
+    const pages = [
+        "swipe left to know more about us",
+        "swipe right to go back",
+    ];
+
     const some = shouldIt
         ? isInView
             ? { bottom: 6 * 16 }
@@ -20,8 +28,11 @@ const Alert = ({ shouldIt, isInView }: AlertType) => {
             animate={some}
             className="fixed w-full text-black flex justify-center z-20"
         >
-            <div className="flex gap-2 items-center bg-white py-2 px-5 rounded-full shadow-[0_1px_10px] shadow-black/75">
-                swipe left to know more about us
+            <motion.div
+                layout
+                className="flex gap-2 items-center bg-white py-2 px-5 rounded-full shadow-[0_1px_10px] shadow-black/75"
+            >
+                {pages[page]}
                 <motion.div
                     initial={{ rotate: 0 }}
                     animate={{ rotate: 20 }}
@@ -35,7 +46,7 @@ const Alert = ({ shouldIt, isInView }: AlertType) => {
                 >
                     <PiHandSwipeLeft />
                 </motion.div>
-            </div>
+            </motion.div>
         </motion.div>
     );
 };

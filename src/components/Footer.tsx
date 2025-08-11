@@ -55,7 +55,7 @@ const Footer = ({ setIsInView }: FooterTypes) => {
                 © 2025 Vevofiks. All rights reserved.
             </p>
             <div className="flex-1 flex justify-end gap-2">
-                <a target="_blank" rel="noopener noreferrer">
+                <a target="_blank" href="https://www.instagram.com/vevofiks" rel="noopener noreferrer">
                     <FaInstagram
                         size={24}
                         className="bg-[#277CE2] text-white p-1.5 md:p-1 rounded-full"

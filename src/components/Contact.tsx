@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { LiaTelegramPlane } from "react-icons/lia";
-import { LuPhoneCall } from "react-icons/lu";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -38,29 +37,35 @@ const Contact = () => {
                 <h1 className="text-4xl text-center">
                     Let&apos;s build something together
                 </h1>
-                <p>
-                    Got a project in mind? Just tell us what you need, we&apos;ll
-                    handle the rest, from concept to completion.
+                <p className="text-center">
+                    Got a project in mind? Just tell us what you need,
+                    we&apos;ll handle the rest, from concept to completion.
                 </p>
             </div>
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-1 my-[2em] w-[75vw] md:w-[30vw] outline-none"
             >
-                <label htmlFor="naam">Name</label>
-                <input
-                    id="naam"
-                    type="text"
-                    onChange={handleChange}
-                    className="bg-[#162c50] text-white rounded-lg outline-none p-1 h-[2em]"
-                />
-                <label htmlFor="email">Email</label>
-                <input
-                    id="email"
-                    type="email"
-                    onChange={handleChange}
-                    className="bg-[#162c50] text-white rounded-lg outline-none p-1 h-[2em]"
-                />
+                <div className="flex gap-4">
+                    <div>
+                        <label htmlFor="naam">Name</label>
+                        <input
+                            id="naam"
+                            type="text"
+                            onChange={handleChange}
+                            className="bg-[#162c50] text-white rounded-lg w-full outline-none p-1 h-[2em]"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <input
+                            id="email"
+                            type="email"
+                            onChange={handleChange}
+                            className="bg-[#162c50] text-white rounded-lg w-full outline-none p-1 h-[2em]"
+                        />
+                    </div>
+                </div>
                 <label htmlFor="message">Message</label>
                 <textarea
                     id="message"
@@ -71,7 +76,7 @@ const Contact = () => {
                     type="submit"
                     className="flex justify-center items-center gap-1 bg-black dark:bg-white text-white text-lg dark:text-black rounded-xl py-1 my-4 cursor-pointer"
                 >
-                    <LiaTelegramPlane size={20}/>
+                    <LiaTelegramPlane size={20} />
                     send
                 </button>
             </form>

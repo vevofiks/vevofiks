@@ -5,7 +5,7 @@
   --foreground: #fff;
 }
 
-@theme {
+@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -20,9 +20,14 @@
 } */
 
 body {
-  background: var(--background);
+  /* background: var(--background); */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #0B1628;
+  overflow-x: hidden;
+  /* opacity: 0.2; */
+  background-image: linear-gradient(#277CE210 3px, transparent 3px), linear-gradient(to right, #277CE210 3px, #0b162800 3px);
+  background-size: 60px 60px;
 }
 
 
@@ -31,7 +36,7 @@ html {
 }
 
 
-.sections {
+/* .sections {
   overflow-x: auto;
   scrollbar-width: none;
   display: flex;
@@ -41,19 +46,11 @@ html {
 
 .section {
   scroll-snap-align: center;
-  /* transform: scale(0.8); */
   opacity: 0;
   transition: transform 0.3s linear, opacity 0.3s linear;
 }
 
 .section.active {
-  /* transform: scale(1); */
   opacity: 1;
-}
+} */
 
-.pattern {
-  background-color: #0B1628;
-  /* opacity: 0.2; */
-  background-image: linear-gradient(#277CE210 3px, transparent 3px), linear-gradient(to right, #277CE210 3px, #0b162800 3px);
-  background-size: 60px 60px;
-}
