@@ -5,6 +5,7 @@ import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import Image from "next/image";
+import Works from "../../../components/Works";
 import Link from "next/link";
 
 const About: React.FC = () => {
@@ -25,10 +26,10 @@ const About: React.FC = () => {
                     stiffness: 120,
                     damping: 25,
                 }}
-                className="min-w-[100%] flex flex-col items-center gap-[10em] mt-[6em] select-none"
+                className="min-w-[100%] flex flex-col items-center gap-[10em] mt-10 select-none"
             >
-                <div className="flex flex-col gap-10">
-                    <h1 className="text-3xl md:text-4xl font-bold text-center">
+                <div className="flex flex-col">
+                    <h1 className="text-3xl text-white md:text-4xl font-bold mb-5 text-center">
                         About Vevofiks
                     </h1>
                     <p className="text-center text-sm md:text-base text-gray-400 md:max-w-2xl px-2 md:px-0">
@@ -40,12 +41,10 @@ const About: React.FC = () => {
                     </p>
                 </div>
                 {/* partners section */}
-                <div className="flex flex-col gap-[4em] mb-[20em] md:mb-[10em] overflow-hidden">
-                    <h1 className="text-3xl md:text-4xl text-center">Our brand partners</h1>
+                <div className="flex flex-col gap-[4em] overflow-hidden">
+                    <h1 className="text-3xl text-white md:text-4xl text-center">Our brand partners</h1>
 
                     <div className="relative overflow-hidden w-full">
-                        <div className="absolute z-50 top-0 left-0 h-full w-20 bg-gradient-to-r from-[#0B1628] to-transparent pointer-events-none" />
-                        <div className="absolute z-50 top-0 right-0 h-full w-20 bg-gradient-to-l from-[#0B1628] to-transparent pointer-events-none" />
 
                         <div className="animate-scroll-smooth w-screen md:w-[33em]">
                             {/* Single container with both sets */}
@@ -77,7 +76,9 @@ const About: React.FC = () => {
                             ))}
                         </div>
                     </div>
+
                 </div>
+                {/* <Works /> */}
             </motion.section>
         </SwipeablePages>
     );

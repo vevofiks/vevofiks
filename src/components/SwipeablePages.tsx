@@ -104,7 +104,7 @@ export default function SwipeablePages({
     return (
         <div
             ref={ele}
-            className="select-none overflow-hidden ease-in-out transition-all duration-300 will-change-transform"
+            className="select-none overflow-hidden ease-in-out transition-all mb-10 duration-300 will-change-transform"
         >
             {children}
         </div>
