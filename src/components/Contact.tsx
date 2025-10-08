@@ -37,9 +37,14 @@ const Contact: React.FC = () => {
       id="contact"
       className="relative min-h-screen px-6 md:px-16 py-20 overflow-hidden"
     >
-      
+      {/* Mobile Globe Background */}
+      <div className="absolute inset-0 flex justify-center items-center md:hidden opacity-30 blur-[2px] z-0">
+        <div className="w-[320px] h-[320px]">
+          <Globe />
+        </div>
+      </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto relative z-10">
         {/* grid layout: form left, globe right */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left: FORM */}
@@ -49,21 +54,24 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="z-30"
           >
-            <div className="bg-[#0e1525]/60 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-white/10">
+            <div className="bg-[#0e1525]/70 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-white/10 relative z-20">
               <div className="flex flex-col gap-3 mb-6">
                 <h1 className="text-3xl md:text-4xl font-bold text-left text-white">
                   Let&apos;s Build Something Together
                 </h1>
                 <p className="text-gray-300 text-sm md:text-base">
-                  Got a project in mind? Tell us what you need, and we’ll take care
-                  of the rest — from concept to completion.
+                  Got a project in mind? Tell us what you need, and we’ll take
+                  care of the rest — from concept to completion.
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
-                    <label htmlFor="naam" className="text-sm font-medium text-white">
+                    <label
+                      htmlFor="naam"
+                      className="text-sm font-medium text-white"
+                    >
                       Name
                     </label>
                     <input
@@ -74,7 +82,10 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <label htmlFor="email" className="text-sm font-medium text-white">
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-medium text-white"
+                    >
                       Email
                     </label>
                     <input
@@ -87,7 +98,10 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="text-sm font-medium text-white">
+                  <label
+                    htmlFor="message"
+                    className="text-sm font-medium text-white"
+                  >
                     Message
                   </label>
                   <textarea
@@ -108,19 +122,16 @@ const Contact: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right: constrained Globe */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="relative flex justify-center items-center"
+            className="hidden md:flex relative justify-center items-center"
           >
-            {/* IMPORTANT: wrapper constrains the globe, hides overflow, and prevents it from covering the left column */}
             <div
-              className="w-[300px] md:w-[420px] lg:w-[520px] h-[300px] md:h-[420px] lg:h-[520px] overflow-hidden rounded-full  z-10"
+              className="w-[300px] md:w-[420px] lg:w-[520px] h-[300px] md:h-[420px] lg:h-[520px] overflow-hidden rounded-full"
               style={{ WebkitMaskImage: "radial-gradient(white, black)" }}
             >
-              {/* scale down the globe if it's too big internally */}
               <div className="w-full h-full transform scale-[0.95] md:scale-100 origin-center">
                 <Globe />
               </div>

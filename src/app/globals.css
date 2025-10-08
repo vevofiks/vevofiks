@@ -176,7 +176,3 @@ html {
     @apply bg-background text-foreground;
   }
 }
-
-* {
-  cursor: none !important;
-}

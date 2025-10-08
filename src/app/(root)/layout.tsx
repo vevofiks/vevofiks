@@ -5,11 +5,21 @@ import Footer from "@/components/Footer";
 import { Meteors } from "@/components/ui/meteors";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import AppProvider from "@/context/AppContext";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isFtrInView, setFtrInView] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect touch devices
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsTouchDevice(
+        "ontouchstart" in window || navigator.maxTouchPoints > 0
+      );
+    }
+  }, []);
 
   return (
     <AppProvider>
@@ -29,10 +39,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             ease: "easeInOut",
           }}
         />
-      </div>
-
-      <div className="cursor-none">
-        <SmoothCursor />
       </div>
 
       <div className="flex min-h-screen flex-col">
