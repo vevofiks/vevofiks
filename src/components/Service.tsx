@@ -52,9 +52,7 @@ const ServiceSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px" }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
-            className="group relative h-[320px] sm:h-[360px] md:h-[360px] lg:h-[420px] 
-                    overflow-hidden rounded-2xl border border-white/10 bg-white/5 
-                    backdrop-blur-sm md:hover:border-white/30 transition-all duration-500"
+            className="group relative h-[300px] md:h-[340px] overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/30 transition-all duration-500"
           >
             <div className="absolute inset-0 z-0">
               <Image
