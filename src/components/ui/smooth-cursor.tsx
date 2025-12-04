@@ -110,6 +110,9 @@ export function SmoothCursor({
   })
 
   useEffect(() => {
+    let isScrolling = false
+    let scrollTimeoutId: NodeJS.Timeout | null = null
+
     const updateVelocity = (currentPos: Position) => {
       const currentTime = Date.now()
       const deltaTime = currentTime - lastUpdateTime.current
@@ -162,7 +165,7 @@ export function SmoothCursor({
 
     let rafId: number
     const throttledMouseMove = (e: MouseEvent) => {
-      if (rafId) return
+      if (rafId || isScrolling) return
 
       rafId = requestAnimationFrame(() => {
         smoothMouseMove(e)
@@ -170,13 +173,24 @@ export function SmoothCursor({
       })
     }
 
+    const handleScroll = () => {
+      isScrolling = true
+      if (scrollTimeoutId) clearTimeout(scrollTimeoutId)
+      scrollTimeoutId = setTimeout(() => {
+        isScrolling = false
+      }, 100)
+    }
+
     document.body.style.cursor = "none"
     window.addEventListener("mousemove", throttledMouseMove)
+    window.addEventListener("scroll", handleScroll, { passive: true })
 
     return () => {
       window.removeEventListener("mousemove", throttledMouseMove)
+      window.removeEventListener("scroll", handleScroll)
       document.body.style.cursor = "auto"
       if (rafId) cancelAnimationFrame(rafId)
+      if (scrollTimeoutId) clearTimeout(scrollTimeoutId)
     }
   }, [cursorX, cursorY, rotation, scale])
 

@@ -92,7 +92,7 @@ export default function SwipeablePages({
             }
         };
 
-        ele.current?.addEventListener("wheel", handleWheel, { passive: false });
+        ele.current?.addEventListener("wheel", handleWheel, { passive: true });
 
         return () => {
             window.removeEventListener("touchstart", handleTouchStart);

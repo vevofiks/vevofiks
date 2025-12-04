@@ -1,8 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect, useRef } from "react";
-import { Instagram, Linkedin, Facebook } from "lucide-react";
 import { FaXTwitter, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa6";
-
-
 
 interface FooterTypes {
   setIsInView: Dispatch<SetStateAction<boolean>>;
@@ -64,50 +61,93 @@ const Footer = ({ setIsInView }: FooterTypes) => {
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-500/30 to-transparent" />
 
-      <div className="relative z-10 flex items-center justify-between px-4 py-6 md:px-8 max-w-7xl mx-auto">
-        <div className="flex items-center flex-1">
-          <img
-            className="hidden md:block w-[8em]"
-            src="/full_logo.svg"
-            alt="Vevofiks Logo"
-            width={200}
-            height={80}
-          />
-          <img
-            className="md:hidden w-[1.2em]"
-            src="/logo_icon.svg"
-            alt="Vevofiks Logo"
-            width={200}
-            height={80}
-          />
-        </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-6 md:px-8">
+        {/* Mobile Layout: Stacked */}
+        <div className="flex flex-col gap-4 md:hidden">
+          {/* Logo */}
+          <div className="flex justify-center">
+            <img
+              className="w-[6em]"
+              src="/full_logo.svg"
+              alt="Vevofiks Logo"
+              width={200}
+              height={80}
+            />
+          </div>
 
-        <div className="flex-1 flex justify-center">
-          <p className="text-gray-300/80 text-xs md:text-sm font-light tracking-wide">
-            © 2025 Vevofiks. All rights reserved.
-          </p>
-        </div>
-
-        <div className="flex items-center justify-end gap-3 flex-1">
-          {socialLinks.map((social) => (
-            <a
-              key={social.name}
-              target="_blank"
-              href={social.url}
-              rel="noopener noreferrer"
-              className="group"
-              aria-label={social.name}
-            >
-              <div
-                className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-full p-2 md:p-2.5 transition-all text-center duration-300 hover:scale-110 ${social.hoverClass}`}
+          {/* Social Links */}
+          <div className="flex items-center justify-center gap-3">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                target="_blank"
+                href={social.url}
+                rel="noopener noreferrer"
+                className="group"
+                aria-label={social.name}
               >
-                <social.icon
-                  size={20}
-                  className="text-gray-300 group-hover:text-white transition-colors duration-300"
-                />
-              </div>
-            </a>
-          ))}
+                <div
+                  className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-full p-2 transition-all duration-300 hover:scale-110 ${social.hoverClass}`}
+                >
+                  <social.icon
+                    size={18}
+                    className="text-gray-300 group-hover:text-white transition-colors duration-300"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Copyright */}
+          <div className="flex justify-center">
+            <p className="text-gray-300/80 text-xs font-light tracking-wide text-center">
+              © 2025 Vevofiks. All rights reserved.
+            </p>
+          </div>
+        </div>
+
+        {/* Desktop Layout: Horizontal */}
+        <div className="hidden md:flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center flex-1">
+            <img
+              className="w-[8em]"
+              src="/full_logo.svg"
+              alt="Vevofiks Logo"
+              width={200}
+              height={80}
+            />
+          </div>
+
+          {/* Copyright */}
+          <div className="flex-1 flex justify-center">
+            <p className="text-gray-300/80 text-sm font-light tracking-wide">
+              © 2025 Vevofiks. All rights reserved.
+            </p>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center justify-end gap-3 flex-1">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                target="_blank"
+                href={social.url}
+                rel="noopener noreferrer"
+                className="group"
+                aria-label={social.name}
+              >
+                <div
+                  className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-full p-2.5 transition-all duration-300 hover:scale-110 ${social.hoverClass}`}
+                >
+                  <social.icon
+                    size={20}
+                    className="text-gray-300 group-hover:text-white transition-colors duration-300"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

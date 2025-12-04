@@ -28,7 +28,13 @@ const Alert = ({ isInView }: AlertType) => {
   return (
     <motion.div
       initial={false}
-      animate={isInView ? { bottom: "6rem" } : { bottom: "2rem" }}
+      animate={
+        isInView 
+          ? { 
+              bottom: window.innerWidth < 768 ? "10rem" : "6rem" // Mobile: 10rem, Desktop: 6rem
+            } 
+          : { bottom: "2rem" }
+      }
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
       className="fixed inset-x-0 flex justify-center z-50 pointer-events-none"
     >

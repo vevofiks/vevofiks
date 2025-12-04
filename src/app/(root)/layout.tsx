@@ -23,7 +23,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <AppProvider>
-      <div className="fixed inset-0 -z-10 pointer-events-none">
+      <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
         <Meteors />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)] pointer-events-none" />
 
@@ -38,6 +38,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
+          style={{ willChange: "transform" }}
         />
       </div>
 
@@ -46,6 +47,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
         <Footer setIsInView={setFtrInView} />
         <Alert isInView={isFtrInView} />
+        {!isTouchDevice && <SmoothCursor />}
       </div>
     </AppProvider>
   );
