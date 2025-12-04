@@ -44,7 +44,7 @@ const ServiceSection: React.FC = () => {
       id="services"
       className={`${montserrat.className} relative flex flex-col justify-center min-h-screen py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20`}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto w-full">
         {services.map((service, index) => (
           <motion.div
             key={service.id}
