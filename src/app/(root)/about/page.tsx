@@ -40,14 +40,13 @@ const About: React.FC = () => {
                         customers with integrity and care.
                     </p>
                 </div>
-                {/* partners section */}
                 <div className="flex flex-col gap-[4em] overflow-hidden">
-                    <h1 className="text-3xl text-white md:text-4xl text-center">Our brand partners</h1>
+                    <h1 className="text-3xl text-white md:text-4xl font-bold mb-5 text-center">
+                        Our brand partners</h1>
 
                     <div className="relative overflow-hidden w-full">
 
                         <div className="animate-scroll-smooth w-screen md:w-[33em]">
-                            {/* Single container with both sets */}
                             {new Array(5).fill(0).map((item, i) => (
                                 <div key={i} className="flex gap-8 items-center">
                                     <Link
