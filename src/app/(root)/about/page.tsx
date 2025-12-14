@@ -5,7 +5,6 @@ import { useAppContext } from "@/context/AppContext";
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Works from "../../../components/Works";
 import Link from "next/link";
 
 const About: React.FC = () => {

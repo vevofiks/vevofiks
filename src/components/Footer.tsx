@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { FaXTwitter, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa6";
 
@@ -66,7 +67,7 @@ const Footer = ({ setIsInView }: FooterTypes) => {
         <div className="flex flex-col gap-4 md:hidden">
           {/* Logo */}
           <div className="flex justify-center">
-            <img
+            <Image
               className="w-[6em]"
               src="/full_logo.svg"
               alt="Vevofiks Logo"
@@ -110,7 +111,7 @@ const Footer = ({ setIsInView }: FooterTypes) => {
         <div className="hidden md:flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center flex-1">
-            <img
+            <Image
               className="w-[8em]"
               src="/full_logo.svg"
               alt="Vevofiks Logo"

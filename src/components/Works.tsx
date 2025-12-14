@@ -1,5 +1,6 @@
 import React from "react";
 import {ourWorks} from "@/app/index.js";
+import Image from "next/image";
 
 type Project = {
     id: string;
@@ -36,7 +37,7 @@ function ProjectCard(props: { work: Project; }) {
         
             {/* Visuals - image area */}
             <div className="relative w-full mb-6 overflow-hidden rounded-xl aspect-[16/10] bg-[rgba(39,124,226,0.05)]">
-                <img
+                <Image
                     src={work.image}
                     alt={work.title}
                     className="h-full w-full object-cover transition-transform duration-400 ease-out group-hover:scale-105 contrast-[1.05] saturate-[1.1]"
