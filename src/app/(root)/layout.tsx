@@ -2,8 +2,6 @@
 
 import Alert from "@/components/Alert";
 import Footer from "@/components/Footer";
-import { Meteors } from "@/components/ui/meteors";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import AppProvider from "@/context/AppContext";
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
@@ -24,7 +22,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <AppProvider>
       <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
-        <Meteors />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)] pointer-events-none" />
 
         <motion.div
@@ -47,7 +44,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
         <Footer setIsInView={setFtrInView} />
         <Alert isInView={isFtrInView} />
-        {!isTouchDevice && <SmoothCursor />}
+
       </div>
     </AppProvider>
   );

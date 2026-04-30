@@ -2,6 +2,7 @@
 
 import ServiceSection from "@/components/Service";
 import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import SwipeablePages from "@/components/SwipeablePages";
 import { motion } from "framer-motion";
@@ -29,6 +30,7 @@ export default function Home() {
       >
         <Hero />
         <ServiceSection />
+        <Projects />
         <Contact />
       </motion.main>
     </SwipeablePages>
