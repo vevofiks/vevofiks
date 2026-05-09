@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vevofiks — Software Development Company
 
-## Getting Started
+> **Engineering high-performance digital products that scale businesses.**
 
-First, run the development server:
+Vevofiks is a Software Development Company specializing in strategy-led websites, high-converting landing pages, and custom SaaS development. We eliminate the friction between brands and their customers through world-class engineering and premium aesthetics.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 💎 What We Do
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We don't just build websites; we build **revenue-generating assets**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Strategy-Led Design:** UI/UX that guides users toward conversion.
+- **High-Performance Engineering:** Lightning-fast digital experiences built with the latest tech.
+- **SaaS & Product Build:** Scalable software solutions for modern business problems.
+- **AI & Automation:** Integrating intelligent workflows to save time and increase efficiency.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### 🌍 Let's Work Together
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We are currently accepting new projects. If you're looking for a partner to elevate your digital presence, we should talk.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **[Official Website](https://vevofiks.com)** — See our latest work.
+- **[Book an Intro Call](https://cal.com/vevofiks-mm1vfe/30min)** — 30-minute discovery call to discuss your goals.
+- **[Email Us](mailto:vevofiks@gmail.com)** — Get a custom quote for your project.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### 🔗 Stay Connected
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[LinkedIn](https://linkedin.com/company/vevofiks) • [Twitter/X](https://twitter.com/vevofiks) • [Instagram](https://instagram.com/vevofiks)
+
+Built with precision by the **Vevofiks Team**.
