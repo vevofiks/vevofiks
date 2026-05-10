@@ -96,7 +96,7 @@ export default function Testimonials() {
     <section id="case-studies" className="py-32 bg-[#050505] border-none">
       <div className="max-w-6xl mx-auto mb-16 text-center px-6">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-          Don't just take our word for it.
+          Don't just take our <span className="bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">word</span> for it.
         </h2>
         <p className="text-lg text-gray-400 max-w-2xl mx-auto">
           See how we've helped founders and businesses scale their operations and revenue.

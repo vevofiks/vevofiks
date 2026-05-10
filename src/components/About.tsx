@@ -70,7 +70,7 @@ export default function About() {
             <div className="text-xs uppercase tracking-[0.4em] text-blue-500 font-bold mb-6">The Collective</div>
             <h2 ref={titleRef} className="text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
               The minds <br/>
-              <span className="text-gray-500">behind the craft.</span>
+              <span className="bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">behind the craft.</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-2xl">
               We aren't just developers. We are a collective of digital architects, 

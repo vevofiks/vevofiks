@@ -39,7 +39,7 @@ export default function Hero() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h1 className="hero-element text-4xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
-          Stop settling for average websites. Start scaling with Vevofiks.
+          Stop settling for average websites. Start scaling with Vevofiks
         </h1>
         <p className="hero-element text-base md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto px-4">
           We eliminate the friction between your brand and your customers with strategy-led design and world-class engineering.

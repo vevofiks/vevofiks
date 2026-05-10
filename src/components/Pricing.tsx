@@ -26,22 +26,34 @@ export default function Pricing() {
         "Priority Post-Launch Support",
       ],
       popular: true
+    },
+    {
+      name: "Custom SaaS & POS Systems",
+      description: "Robust, scalable software engineered for complex business operations and multi-user environments.",
+      features: [
+        "Full-Stack SaaS Architecture",
+        "Custom POS Systems (Web/Desktop)",
+        "Complex Database Design & Optimization",
+        "API Development & Third-party Integrations",
+        "Real-time Dashboards & Data Syncing",
+        "Dedicated Post-Launch Engineering Support",
+      ]
     }
   ];
 
   return (
     <section className="py-32 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            Transparent packages. Outsized ROI.
+            Transparent packages. Outsized <span className="bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">ROI</span>.
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             We don't do complex billing. Choose the scope of your project, and we'll deliver a world-class solution.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {plans.map((plan, idx) => (
             <div
               key={idx}

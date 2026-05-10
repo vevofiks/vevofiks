@@ -125,7 +125,7 @@ export default function ProjectShowcase() {
     <section id="projects" className="py-24 bg-[#050505]">
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          Selected <span className="text-gray-500">Works.</span>
+          Selected <span className="bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">Works.</span>
         </h2>
         <p className="text-xl text-gray-400 max-w-2xl">
           Engineering high-performance digital products that scale businesses.

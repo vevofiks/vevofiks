@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-16 md:gap-24">
+          <div className="flex flex-wrap gap-12 md:gap-24">
             <div className="flex flex-col gap-4">
               <span className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Navigation</span>
               <Link href="#projects" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Work</Link>
@@ -39,6 +39,11 @@ export default function Footer() {
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Instagram</a>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">LinkedIn</a>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Twitter</a>
+            </div>
+            <div className="flex flex-col gap-4">
+              <span className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Contact</span>
+              <a href="mailto:vevofiks@gmail.com" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">vevofiks@gmail.com</a>
+              <a href="tel:+916282699250" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">+91 6282 699 250</a>
             </div>
           </div>
         </div>

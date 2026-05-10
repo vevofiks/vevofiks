@@ -98,7 +98,7 @@ export default function Services() {
             Our Expertise
           </div>
           <h2 className="reveal-item text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-8">
-            Solving Complex<br />Problems with Design.
+            Solving <span className="bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">Complex</span><br />Problems with Design.
           </h2>
         </div>
 
