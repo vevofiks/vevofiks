@@ -22,7 +22,7 @@ We don't just build websites; we build **revenue-generating assets**.
 We are currently accepting new projects. If you're looking for a partner to elevate your digital presence, we should talk.
 
 - **[Official Website](https://vevofiks.com)** — See our latest work.
-- **[Book an Intro Call](https://cal.com/vevofiks-mm1vfe/30min)** — 30-minute discovery call to discuss your goals.
+- **[Schedule a Strategy Call](https://cal.com/vevofiks-mm1vfe/30min)** — 30-minute discovery call to discuss your goals.
 - **[Email Us](mailto:vevofiks@gmail.com)** — Get a custom quote for your project.
 
 ---

@@ -43,8 +43,8 @@ export default function Pricing() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {plans.map((plan, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className={`relative bg-[#0a0a0a] border ${plan.popular ? 'border-gray-400' : 'border-white/10'} p-8 rounded-3xl flex flex-col hover:border-gray-500 transition-colors duration-300`}
             >
               {plan.popular && (
@@ -54,7 +54,7 @@ export default function Pricing() {
               )}
               <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
               <p className="text-gray-400 text-sm mb-8">{plan.description}</p>
-              
+
               <ul className="space-y-4 mb-8 grow">
                 {plan.features.map((feature, fIdx) => (
                   <li key={fIdx} className="flex items-start gap-3">
@@ -64,17 +64,16 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <Link 
+              <Link
                 href="https://cal.com/vevofiks-mm1vfe/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-full text-center py-4 rounded-full text-sm font-semibold transition-all ${
-                  plan.popular 
-                    ? 'coloredButton' 
+                className={`w-full text-center py-4 rounded-full text-sm font-semibold transition-all ${plan.popular
+                    ? 'coloredButton'
                     : 'bg-[#1a1a1a] text-white hover:bg-[#252525]'
-                }`}
+                  }`}
               >
-                Book an Intro Call
+                Schedule a Strategy Call
               </Link>
             </div>
           ))}
