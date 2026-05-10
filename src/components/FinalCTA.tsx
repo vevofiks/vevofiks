@@ -19,7 +19,7 @@ export default function FinalCTA() {
             href="https://cal.com/vevofiks-mm1vfe/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block coloredButton px-12 py-5 rounded-full text-lg font-bold hover:scale-105 shadow-xl shadow-blue-900/40"
+            className="inline-block coloredButton px-8 md:px-12 py-4 md:py-5 rounded-full text-base md:text-lg font-bold hover:scale-105 shadow-xl shadow-blue-900/40 whitespace-nowrap"
           >
             Book an Intro Call
           </Link>

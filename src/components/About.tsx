@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -29,6 +29,7 @@ const TEAM = [
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const [activeTap, setActiveTap] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -84,31 +85,35 @@ export default function About() {
 
         <div className="team-grid grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
           {TEAM.map((member, idx) => (
-            <div key={idx} className="team-card group relative">
-              <div className="relative aspect-4/5 overflow-hidden rounded-[2.5rem] bg-zinc-900 mb-8 border border-white/5 transition-all duration-500 group-hover:border-blue-500/30 group-hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)]">
+            <div 
+              key={idx} 
+              onClick={() => setActiveTap(activeTap === idx ? null : idx)}
+              className="team-card group relative cursor-pointer"
+            >
+              <div className={`relative aspect-4/5 overflow-hidden rounded-[2.5rem] bg-zinc-900 mb-8 border border-white/5 transition-all duration-500 group-hover:border-blue-500/30 group-hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] ${activeTap === idx ? "border-blue-500/30 shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)]" : ""}`}>
                  <img 
                    src={member.image} 
                    alt={member.name}
-                   className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                   className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 ${activeTap === idx ? "grayscale-0 scale-110" : ""}`}
                  />
                  
                  {/* Premium Overlay */}
-                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-10">
+                 <div className={`absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-10 ${activeTap === idx ? "opacity-100" : ""}`}>
                     <div className="overflow-hidden">
-                      <p className="text-blue-400 text-xs uppercase tracking-widest font-bold mb-2 translate-y-10 group-hover:translate-y-0 transition-transform duration-500 delay-100">{member.role}</p>
+                      <p className={`text-blue-400 text-xs uppercase tracking-widest font-bold mb-2 translate-y-10 group-hover:translate-y-0 transition-transform duration-500 delay-100 ${activeTap === idx ? "translate-y-0" : ""}`}>{member.role}</p>
                     </div>
                     <div className="overflow-hidden">
-                      <h3 className="text-3xl font-bold text-white translate-y-10 group-hover:translate-y-0 transition-transform duration-500 delay-200">{member.name}</h3>
+                      <h3 className={`text-3xl font-bold text-white translate-y-10 group-hover:translate-y-0 transition-transform duration-500 delay-200 ${activeTap === idx ? "translate-y-0" : ""}`}>{member.name}</h3>
                     </div>
                  </div>
               </div>
 
-              <div className="flex justify-between items-start px-4 group-hover:opacity-40 transition-opacity duration-500">
+              <div className={`flex justify-between items-start px-4 group-hover:opacity-40 transition-opacity duration-500 ${activeTap === idx ? "opacity-40" : ""}`}>
                 <div>
                   <h3 className="text-2xl font-bold mb-1 tracking-tight">{member.name}</h3>
                   <p className="text-gray-500 uppercase tracking-widest text-[10px] font-bold">{member.role}</p>
                 </div>
-                <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-blue-500/50 group-hover:bg-blue-500 transition-all duration-500">
+                <div className={`w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-blue-500/50 group-hover:bg-blue-500 transition-all duration-500 ${activeTap === idx ? "border-blue-500/50 bg-blue-500" : ""}`}>
                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                       <path d="M7 17l9.2-9.2M17 17V7H7" />
                    </svg>
