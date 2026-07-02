@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Globe, ShoppingCart, Layers, Sparkles } from "lucide-react";
+import { Globe, ShoppingCart, Layers, Sparkles, Fingerprint } from "lucide-react";
 
 export default function Services() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -77,6 +77,12 @@ export default function Services() {
       icon: <Sparkles className="w-6 h-6" />,
       tag: "Efficiency",
     },
+    {
+      title: "White-Label Dev",
+      desc: "Confidential, high-fidelity development for design studios and agencies.",
+      icon: <Fingerprint className="w-6 h-6" />,
+      tag: "Partnership",
+    },
   ];
 
   return (
@@ -103,39 +109,43 @@ export default function Services() {
         </div>
 
         {/* Unique Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/5 rounded-[1 .5rem] overflow-hidden bg-black/20 backdrop-blur-3xl">
-          {services.map((service, idx) => (
-            <div
-              key={idx}
-              className="reveal-item group relative p-10 md:p-12 border-white/5 border-b md:border-b-0 md:border-r last:border-0 hover:bg-white/2 transition-colors duration-500 overflow-hidden"
-            >
-              {/* Local Border Highlight Following Mouse */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-px bg-white/5 border border-white/5 rounded-[1.5rem] overflow-hidden backdrop-blur-3xl">
+          {services.map((service, idx) => {
+            const gridSpans = idx < 3 ? "lg:col-span-2" : "lg:col-span-3";
+            const mdGridSpans = idx === 4 ? "md:col-span-2" : "md:col-span-1";
+            return (
               <div
-                className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{
-                  background: `radial-gradient(200px circle at ${mousePos.x % 400}px ${mousePos.y % 400}px, rgba(255,255,255,0.08), transparent)`,
-                }}
-              />
+                key={idx}
+                className={`reveal-item group relative p-10 md:p-12 bg-[#050505] hover:bg-white/2 transition-colors duration-500 overflow-hidden ${gridSpans} ${mdGridSpans}`}
+              >
+                {/* Local Border Highlight Following Mouse */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: `radial-gradient(200px circle at ${mousePos.x % 400}px ${mousePos.y % 400}px, rgba(255,255,255,0.08), transparent)`,
+                  }}
+                />
 
-              <div className="relative z-10 h-full flex flex-col">
-                <div className="mb-12 w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:scale-110 group-hover:text-blue-400 transition-all duration-500">
-                  {service.icon}
-                </div>
-
-                <div className="mt-auto">
-                  <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">
-                    {service.tag}
+                <div className="relative z-10 h-full flex flex-col">
+                  <div className="mb-12 w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:scale-110 group-hover:text-blue-400 transition-all duration-500">
+                    {service.icon}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed max-w-[200px]">
-                    {service.desc}
-                  </p>
+
+                  <div className="mt-auto">
+                    <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">
+                      {service.tag}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-[200px]">
+                      {service.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom Decorative Element */}

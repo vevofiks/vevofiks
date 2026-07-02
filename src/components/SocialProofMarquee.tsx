@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const LOGOS = ["Flowergrid", "Arrham Group", "Forgedots", "Maximus", "Grainora"];
+const LOGOS = ["Flowergrid", "Arrham Group", "Forgedots","PowerVolt", "Grainora"];
 
 export default function SocialProofMarquee() {
   const scrollerRef = useRef<HTMLDivElement>(null);

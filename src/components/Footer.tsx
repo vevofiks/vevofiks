@@ -30,9 +30,9 @@ export default function Footer() {
           <div className="flex flex-wrap gap-12 md:gap-24">
             <div className="flex flex-col gap-4">
               <span className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Navigation</span>
-              <Link href="#projects" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Work</Link>
-              <Link href="#services" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Services</Link>
-              <Link href="#contact" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Contact</Link>
+              <Link href="/#projects" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Work</Link>
+              <Link href="/#services" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Services</Link>
+              <Link href="/#contact" className="text-gray-400 hover:text-white text-sm transition-colors font-medium">Contact</Link>
             </div>
             <div className="flex flex-col gap-4">
               <span className="text-white font-bold mb-2 uppercase tracking-widest text-xs">Socials</span>

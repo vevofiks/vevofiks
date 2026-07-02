@@ -5,18 +5,18 @@ import gsap from "gsap";
 
 const PROJECTS = [
   {
-    title: "AI Automation Agent",
-    year: "2023",
-    image: "/works/ai-agent.png",
-    description: "Advanced AI-driven automation for enterprise workflows.",
-    link: "#"
+    title: "Flower Grid Wellness",
+    year: "2025—2026",
+    image: "/works/flowergrid.png",
+    description: "Health and wellness care services",
+    link: "https://flowergrid.co.uk"
   },
   {
-    title: "Arrham Portfolio",
+    title: "Grainora",
     year: "2025—2026",
-    image: "/works/arrham.png",
-    description: "Clean, minimalist portfolio for a international clients.",
-    link: "https://arrham-group.vercel.app/"
+    image: "/works/grainora.png",
+    description: "Bring together producers and buyers worldwide",
+    link: "https://grainora-group.com/"
   },
   {
     title: "Brown Beans Coffee",
@@ -33,18 +33,18 @@ const PROJECTS = [
     link: "https://cool-star-ebon.vercel.app/"
   },
   {
-    title: "Flower Grid Wellness",
+    title: "Arrham Portfolio",
     year: "2025—2026",
-    image: "/works/flowergrid.png",
-    description: "Health and wellness care services",
-    link: "https://flowergrid.co.uk"
+    image: "/works/arrham.png",
+    description: "Clean, minimalist portfolio for a international clients.",
+    link: "https://arrham-group.vercel.app/"
   },
   {
-    title: "Grainora",
-    year: "2025—2026",
-    image: "/works/grainora.png",
-    description: "Bring together producers and buyers worldwide",
-    link: "https://grainora-group.com/"
+    title: "AI Automation Agent",
+    year: "2023",
+    image: "/works/ai-agent.png",
+    description: "Advanced AI-driven automation for enterprise workflows.",
+    link: "#"
   }
 
 ];

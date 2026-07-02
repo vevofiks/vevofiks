@@ -40,6 +40,10 @@ const FAQS = [
   {
     question: "Do you handle domain and hosting setup?",
     answer: "Yes. We configure all DNS settings and deploy your application on enterprise-grade infrastructure (like Vercel or AWS) for maximum speed and reliability."
+  },
+  {
+    question: "Do you offer white-label development for other agencies?",
+    answer: "Yes, we partner with design studios, creative agencies, and marketing firms globally. We operate as your invisible development arm, working under NDA and using your communication channels (Slack, email) as needed."
   }
 ];
 
