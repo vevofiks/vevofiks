@@ -186,7 +186,7 @@ export default function ProjectShowcase() {
       {/* Responsive Accordion Container */}
       <div
         ref={containerRef}
-        className="flex flex-col md:flex-row w-full h-[750px] md:h-[600px] border-y border-white/10 overflow-hidden bg-[#0d0d0d]"
+        className="flex flex-col md:flex-row w-full h-[1100px] md:h-[600px] border-y border-white/10 overflow-hidden bg-[#0d0d0d]"
       >
         {PROJECTS.map((project, idx) => {
           return (
@@ -205,7 +205,7 @@ export default function ProjectShowcase() {
                   window.open(project.link, "_blank");
                 }
               }}
-              className="relative w-full md:w-auto h-full border-b md:border-b-0 md:border-r border-white/10 last:border-b-0 last:border-r-0 cursor-pointer overflow-hidden flex flex-col md:flex-row basis-[60px] md:basis-[80px] shrink-0"
+              className="relative w-full md:w-auto h-auto md:h-full border-b md:border-b-0 md:border-r border-white/10 last:border-b-0 last:border-r-0 cursor-pointer overflow-hidden flex flex-col md:flex-row basis-[60px] md:basis-[80px] shrink-0"
               style={{
                 flexGrow: idx === hoveredIndex ? 1 : 0,
                 willChange: "flex-grow",
