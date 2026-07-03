@@ -117,14 +117,6 @@ const PROJECTS = [
     link: "https://powervolt-lilac.vercel.app/",
     category: "SaaS & Platform",
   },
-  {
-    title: "AI Automation Agent",
-    year: "2026-2027",
-    image: "/works/ai-agent.png",
-    description: "Advanced AI-driven automation for enterprise workflows.",
-    link: "#",
-    category: "SaaS & AI Systems",
-  },
 ];
 
 export default function ProjectShowcase() {
@@ -241,14 +233,14 @@ export default function ProjectShowcase() {
         </div>
 
         {/* Pinned Card Stack Container */}
-        <div className="relative w-full max-w-5xl h-[530px] md:h-[480px] rounded-[2.5rem] relative z-10">
+        <div className="relative w-full max-w-5xl h-[440px] md:h-[480px] rounded-[2.5rem] z-10 mt-9">
           {PROJECTS.map((project, i) => (
             <div
               key={`${project.title}-${i}`}
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className="absolute inset-0 rounded-[2rem] border border-white/10 bg-[#0c0c0c] flex flex-col md:flex-row overflow-hidden shadow-2xl p-5 md:p-8 gap-6 md:gap-8"
+              className="absolute top-0 left-0 right-0 h-auto md:h-full rounded-[2rem] border border-white/10 bg-[#0c0c0c] flex flex-col md:flex-row overflow-hidden shadow-2xl p-5 md:p-8 gap-6 md:gap-8"
               style={{
                 zIndex: i,
               }}
