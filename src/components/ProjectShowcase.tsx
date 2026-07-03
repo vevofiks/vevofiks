@@ -5,46 +5,73 @@ import gsap from "gsap";
 
 const PROJECTS = [
   {
+    title: "PowerVolt",
+    year: "2025—2026",
+    image: "/works/powervolt.png",
+    description:
+      "Electrical contracting, installation, and maintenance engineering solutions.",
+    link: "https://powervolt-lilac.vercel.app/",
+  },
+  {
     title: "Flower Grid Wellness",
     year: "2025—2026",
     image: "/works/flowergrid.png",
     description: "Health and wellness care services",
-    link: "https://flowergrid.co.uk"
+    link: "https://flowergrid.co.uk",
+  },
+
+  {
+    title: "Tdot Cafe",
+    year: "2025—2026",
+    image: "/works/tdotcafe.png",
+    description: "Premium dining experience and gourmet coffee shop website.",
+    link: "https://tdot-cafe.vercel.app/",
   },
   {
     title: "Grainora",
     year: "2025—2026",
     image: "/works/grainora.png",
     description: "Bring together producers and buyers worldwide",
-    link: "https://grainora-group.com/"
+    link: "https://grainora-group.com/",
   },
   {
     title: "Brown Beans Coffee",
     year: "2025—2026",
     image: "/works/brownbeans.png",
     description: "Premium coffee shop website.",
-    link: "https://brownbeans.vercel.app/"
+    link: "https://brownbeans.vercel.app/",
   },
   {
     title: "Extra Logic",
     year: "2025—2026",
     image: "/works/extralogic.png",
-    description: "Global business consultancy and custom engineering solutions.",
-    link: "https://extra-logic.com/"
+    description:
+      "Global business consultancy and custom engineering solutions.",
+    link: "https://extra-logic.com/",
   },
   {
     title: "Letsellr",
     year: "2025—2026",
     image: "/works/letsellr.jpg",
-    description: "Real estate search platform for verified PGs, hostels, and apartments.",
-    link: "https://letsellr.in/"
+    description:
+      "Real estate search platform for verified PGs, hostels, and apartments.",
+    link: "https://letsellr.in/",
+  },
+  {
+    title: "Bakai",
+    year: "2025—2026",
+    image: "/works/bakwa.png",
+    description:
+      "Sustainable luxury packaging and biodegradable plant-based plastic bottles movement.",
+    link: "https://bakwa.vercel.app/",
   },
   {
     title: "AndMedia Solutions",
     year: "2025—2026",
     image: "/works/andmedia.png",
-    description: "Global media planning, OOH, DOOH, transit, and airport advertising solutions.",
-    link: "https://andmedia.me/"
+    description:
+      "Global media planning, OOH, DOOH, transit, and airport advertising solutions.",
+    link: "https://andmedia.me/",
   },
 
   {
@@ -52,22 +79,22 @@ const PROJECTS = [
     year: "2026",
     image: "/works/cool-star.png",
     description: "Online platform for ac services",
-    link: "https://cool-star-ebon.vercel.app/"
+    link: "https://cool-star-ebon.vercel.app/",
   },
   {
     title: "Arrham Portfolio",
     year: "2025—2026",
     image: "/works/arrham.png",
     description: "Clean, minimalist portfolio for a international clients.",
-    link: "https://arrham-group.vercel.app/"
+    link: "https://arrham-group.vercel.app/",
   },
   {
     title: "AI Automation Agent",
     year: "2023",
     image: "/works/ai-agent.png",
     description: "Advanced AI-driven automation for enterprise workflows.",
-    link: "#"
-  }
+    link: "#",
+  },
 ];
 
 export default function ProjectShowcase() {
@@ -146,7 +173,10 @@ export default function ProjectShowcase() {
     <section id="projects" className="py-24 bg-[#050505]">
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          Selected <span className="bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">Works.</span>
+          Selected{" "}
+          <span className="bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">
+            Works.
+          </span>
         </h2>
         <p className="text-xl text-gray-400 max-w-2xl">
           Engineering high-performance digital products that scale businesses.
@@ -162,7 +192,9 @@ export default function ProjectShowcase() {
           return (
             <div
               key={idx}
-              ref={el => { panelsRef.current[idx] = el }}
+              ref={(el) => {
+                panelsRef.current[idx] = el;
+              }}
               onMouseEnter={() => {
                 if (window.innerWidth >= 768) setHoveredIndex(idx);
               }}
@@ -170,18 +202,17 @@ export default function ProjectShowcase() {
                 if (hoveredIndex !== idx) {
                   setHoveredIndex(idx);
                 } else {
-                  window.open(project.link, '_blank');
+                  window.open(project.link, "_blank");
                 }
               }}
               className="relative w-full md:w-auto h-full border-b md:border-b-0 md:border-r border-white/10 last:border-b-0 last:border-r-0 cursor-pointer overflow-hidden flex flex-col md:flex-row basis-[60px] md:basis-[80px] shrink-0"
               style={{
                 flexGrow: idx === hoveredIndex ? 1 : 0,
-                willChange: "flex-grow"
+                willChange: "flex-grow",
               }}
             >
               {/* Title Bar - Horizontal on Mobile, Vertical on Desktop */}
               <div className="relative w-full md:w-[80px] shrink-0 h-[60px] md:h-full flex md:flex-col justify-between items-center px-6 md:px-0 md:py-8 z-10 bg-[#0d0d0d]">
-
                 {/* Year */}
                 <div className="year-text opacity-0 -translate-y-4 md:-translate-y-8 pointer-events-none absolute md:static left-6">
                   <span className="text-white text-sm md:text-xl font-medium tracking-[0.2em] md:[writing-mode:vertical-rl] md:rotate-180 whitespace-nowrap">
@@ -213,7 +244,6 @@ export default function ProjectShowcase() {
                   </p>
                 </div>
               </div>
-
             </div>
           );
         })}
