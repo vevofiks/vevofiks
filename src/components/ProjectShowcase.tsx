@@ -5,6 +5,13 @@ import gsap from "gsap";
 
 const PROJECTS = [
   {
+    title: "Extra Logic",
+    year: "2025—2026",
+    image: "/works/extralogic.png",
+    description: "Global business consultancy and custom engineering solutions.",
+    link: "https://extra-logic.com/"
+  },
+  {
     title: "Flower Grid Wellness",
     year: "2025—2026",
     image: "/works/flowergrid.png",
