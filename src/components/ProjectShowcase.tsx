@@ -5,27 +5,20 @@ import gsap from "gsap";
 
 const PROJECTS = [
   {
-    title: "PowerVolt",
-    year: "2025—2026",
-    image: "/works/powervolt.png",
-    description:
-      "Electrical contracting, installation, and maintenance engineering solutions.",
-    link: "https://powervolt-lilac.vercel.app/",
-  },
-  {
     title: "Flower Grid Wellness",
-    year: "2025—2026",
+    year: "2026-2027",
     image: "/works/flowergrid.png",
     description: "Health and wellness care services",
     link: "https://flowergrid.co.uk",
+    category: "Creative",
   },
-
   {
     title: "Tdot Cafe",
     year: "2025—2026",
     image: "/works/tdotcafe.png",
     description: "Premium dining experience and gourmet coffee shop website.",
     link: "https://tdot-cafe.vercel.app/",
+    category: "Creative",
   },
   {
     title: "Grainora",
@@ -33,6 +26,7 @@ const PROJECTS = [
     image: "/works/grainora.png",
     description: "Bring together producers and buyers worldwide",
     link: "https://grainora-group.com/",
+    category: "Brands",
   },
   {
     title: "Brown Beans Coffee",
@@ -40,6 +34,7 @@ const PROJECTS = [
     image: "/works/brownbeans.png",
     description: "Premium coffee shop website.",
     link: "https://brownbeans.vercel.app/",
+    category: "Creative",
   },
   {
     title: "Extra Logic",
@@ -48,6 +43,7 @@ const PROJECTS = [
     description:
       "Global business consultancy and custom engineering solutions.",
     link: "https://extra-logic.com/",
+    category: "SaaS",
   },
   {
     title: "Letsellr",
@@ -56,30 +52,33 @@ const PROJECTS = [
     description:
       "Real estate search platform for verified PGs, hostels, and apartments.",
     link: "https://letsellr.in/",
+    category: "SaaS",
   },
   {
-    title: "Bakai",
-    year: "2025—2026",
+    title: "Bakwa",
+    year: "2026-2027",
     image: "/works/bakwa.png",
     description:
       "Sustainable luxury packaging and biodegradable plant-based plastic bottles movement.",
     link: "https://bakwa.vercel.app/",
+    category: "Brands",
   },
   {
     title: "AndMedia Solutions",
-    year: "2025—2026",
+    year: "2026-2027",
     image: "/works/andmedia.png",
     description:
       "Global media planning, OOH, DOOH, transit, and airport advertising solutions.",
     link: "https://andmedia.me/",
+    category: "SaaS",
   },
-
   {
     title: "Cool Star Ac Services",
-    year: "2026",
+    year: "2026-2027",
     image: "/works/cool-star.png",
     description: "Online platform for ac services",
     link: "https://cool-star-ebon.vercel.app/",
+    category: "Creative",
   },
   {
     title: "Arrham Portfolio",
@@ -87,166 +86,221 @@ const PROJECTS = [
     image: "/works/arrham.png",
     description: "Clean, minimalist portfolio for a international clients.",
     link: "https://arrham-group.vercel.app/",
+    category: "Creative",
+  },
+  {
+    title: "Harfa Trading",
+    year: "2025—2026",
+    image: "/works/harfatrading.png",
+    description:
+      "Automotive components and car accessories wholesale platform in Qatar.",
+    link: "https://www.harfatrading.com/",
+    category: "Brands",
+  },
+  {
+    title: "Flash Car",
+    year: "2025—2026",
+    image: "/works/flashcar.png",
+    description:
+      "Premium automotive care, detailing, and luxury car services.",
+    link: "https://www.flashcarsaudi.com/",
+    category: "Brands",
+  },
+  {
+    title: "PowerVolt",
+    year: "2026-2027",
+    image: "/works/powervolt.png",
+    description:
+      "Electrical contracting, installation, and maintenance engineering solutions.",
+    link: "https://powervolt-lilac.vercel.app/",
+    category: "SaaS",
   },
   {
     title: "AI Automation Agent",
-    year: "2023",
+    year: "2026-2027",
     image: "/works/ai-agent.png",
     description: "Advanced AI-driven automation for enterprise workflows.",
     link: "#",
+    category: "SaaS",
   },
 ];
 
+const CATEGORIES = [
+  { id: "all", label: "All Works" },
+  { id: "SaaS", label: "SaaS & Products" },
+  { id: "Brands", label: "Brands & E-Commerce" },
+  { id: "Creative", label: "Creative & Portfolios" },
+];
+
 export default function ProjectShowcase() {
-  const [hoveredIndex, setHoveredIndex] = useState<number>(2); // Default active project
-  const containerRef = useRef<HTMLDivElement>(null);
-  const panelsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const filteredProjects =
+    activeCategory === "all"
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === activeCategory);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!gridRef.current) return;
 
     const ctx = gsap.context(() => {
-      panelsRef.current.forEach((panel, idx) => {
-        if (!panel) return;
-        const isActive = idx === hoveredIndex;
-
-        // Smoothly animate the flex-grow of the panel
-        gsap.to(panel, {
-          flexGrow: isActive ? 1 : 0,
-          duration: 1.0,
-          ease: "power4.inOut",
+      gsap.fromTo(
+        gridRef.current?.children || [],
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.08,
+          duration: 0.8,
+          ease: "power3.out",
           overwrite: "auto",
-        });
-
-        // Animate Image Section opacity
-        const imgContainer = panel.querySelector(".img-container");
-        if (imgContainer) {
-          gsap.to(imgContainer, {
-            opacity: isActive ? 1 : 0,
-            duration: 1.0,
-            ease: "power4.inOut",
-            overwrite: "auto",
-          });
         }
-
-        // Animate Description Section
-        const descSection = panel.querySelector(".desc-section");
-        if (descSection) {
-          gsap.to(descSection, {
-            opacity: isActive ? 1 : 0,
-            y: isActive ? 0 : 20,
-            duration: 0.8,
-            delay: isActive ? 0.3 : 0,
-            ease: "power3.out",
-            overwrite: "auto",
-          });
-        }
-
-        // Animate Title Text Color
-        const titleText = panel.querySelector(".title-text");
-        if (titleText) {
-          gsap.to(titleText, {
-            color: isActive ? "#ffffff" : "#666666",
-            duration: 0.5,
-            overwrite: "auto",
-          });
-        }
-
-        // Animate Year Text
-        const yearText = panel.querySelector(".year-text");
-        if (yearText) {
-          gsap.to(yearText, {
-            opacity: isActive ? 1 : 0,
-            y: isActive ? 0 : -20,
-            duration: 0.8,
-            ease: "power2.out",
-            overwrite: "auto",
-          });
-        }
-      });
-    }, containerRef);
+      );
+    }, gridRef);
 
     return () => ctx.revert();
-  }, [hoveredIndex]);
+  }, [activeCategory]);
 
   return (
-    <section id="projects" className="py-24 bg-[#050505]">
-      <div className="max-w-7xl mx-auto px-6 mb-16">
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          Selected{" "}
-          <span className="bg-linear-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">
-            Works.
-          </span>
-        </h2>
-        <p className="text-xl text-gray-400 max-w-2xl">
-          Engineering high-performance digital products that scale businesses.
-        </p>
+    <section id="projects" className="py-32 bg-[#050505] relative overflow-hidden">
+      {/* Background Decorative Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 mb-20 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              Selected{" "}
+              <span className="bg-linear-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent">
+                Works.
+              </span>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+              High-performance digital products, interactive brand platforms, and custom software systems designed to scale businesses.
+            </p>
+          </div>
+
+          {/* Project Count badge */}
+          <div className="hidden md:block">
+            <span className="text-sm font-mono text-zinc-600 uppercase tracking-widest">
+              Total Showcase / {PROJECTS.length} Projects
+            </span>
+          </div>
+        </div>
+
+        {/* Filter Navigation */}
+        <div className="mt-16 flex flex-wrap gap-3 border-b border-white/5 pb-8">
+          {CATEGORIES.map((cat) => {
+            const isActive = activeCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-6 py-2.5 rounded-full text-sm font-medium tracking-wide transition-all duration-300 border cursor-pointer ${
+                  isActive
+                    ? "border-blue-500/40 text-white bg-linear-to-r from-blue-950/50 to-blue-900/40 shadow-[0_0_25px_-5px_rgba(59,130,246,0.25)]"
+                    : "border-white/5 text-zinc-400 hover:text-white hover:border-white/10 bg-zinc-950/20"
+                }`}
+              >
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
-      {/* Responsive Accordion Container */}
-      <div
-        ref={containerRef}
-        className="flex flex-col md:flex-row w-full h-[1100px] md:h-[600px] border-y border-white/10 overflow-hidden bg-[#0d0d0d]"
-      >
-        {PROJECTS.map((project, idx) => {
-          return (
-            <div
-              key={idx}
-              ref={(el) => {
-                panelsRef.current[idx] = el;
-              }}
-              onMouseEnter={() => {
-                if (window.innerWidth >= 768) setHoveredIndex(idx);
-              }}
-              onClick={() => {
-                if (hoveredIndex !== idx) {
-                  setHoveredIndex(idx);
-                } else {
-                  window.open(project.link, "_blank");
-                }
-              }}
-              className="relative w-full md:w-auto h-auto md:h-full border-b md:border-b-0 md:border-r border-white/10 last:border-b-0 last:border-r-0 cursor-pointer overflow-hidden flex flex-col md:flex-row basis-[60px] md:basis-[80px] shrink-0"
-              style={{
-                flexGrow: idx === hoveredIndex ? 1 : 0,
-                willChange: "flex-grow",
-              }}
-            >
-              {/* Title Bar - Horizontal on Mobile, Vertical on Desktop */}
-              <div className="relative w-full md:w-[80px] shrink-0 h-[60px] md:h-full flex md:flex-col justify-between items-center px-6 md:px-0 md:py-8 z-10 bg-[#0d0d0d]">
-                {/* Year */}
-                <div className="year-text opacity-0 -translate-y-4 md:-translate-y-8 pointer-events-none absolute md:static left-6">
-                  <span className="text-white text-sm md:text-xl font-medium tracking-[0.2em] md:[writing-mode:vertical-rl] md:rotate-180 whitespace-nowrap">
-                    {project.year}
-                  </span>
+      {/* Grid Container */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20"
+        >
+          {filteredProjects.map((project, idx) => {
+            return (
+              <a
+                key={`${project.title}-${idx}`}
+                href={project.link}
+                target={project.link.startsWith("http") ? "_blank" : undefined}
+                rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group relative flex flex-col cursor-pointer"
+              >
+                {/* Mockup Frame */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl border border-white/10 bg-zinc-950 hover:border-blue-500/20 transition-all duration-700 hover:shadow-[0_0_60px_-15px_rgba(59,130,246,0.2)]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-103"
+                  />
+
+                  {/* Dark Vignette / Gradient Overlay */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-black/30 opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
+
+                  {/* Interactive Explore Badge */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-xs">
+                    <span className="px-6 py-3 rounded-full bg-white text-black font-semibold text-sm flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out shadow-xl">
+                      Explore Project
+                      <svg
+                        className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
 
-                {/* Title */}
-                <div className="flex-1 flex items-center md:items-end justify-center w-full">
-                  <span className="title-text text-[#666666] text-sm md:text-2xl font-medium tracking-wide whitespace-nowrap md:[writing-mode:vertical-rl] md:rotate-180">
-                    {project.title}
-                  </span>
-                </div>
-              </div>
+                {/* Info & Text Details */}
+                <div className="mt-6 flex items-start justify-between gap-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-mono text-zinc-500">
+                        {project.year}
+                      </span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50" />
+                      <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 bg-white/5 border border-white/5 px-2.5 py-0.5 rounded-full">
+                        {CATEGORIES.find((c) => c.id === project.category)?.label.split(" ")[0]}
+                      </span>
+                    </div>
 
-              {/* Expandable Image Section */}
-              <div className="img-container absolute top-[60px] md:top-0 bottom-0 right-0 left-0 md:left-[80px] opacity-0 overflow-hidden py-4 px-4 md:py-6 md:pr-6 pointer-events-none">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover rounded-xl md:rounded-[2rem]"
-                />
+                    <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                      {project.title}
+                    </h3>
 
-                {/* Description Overlay */}
-                <div className="desc-section absolute bottom-8 md:bottom-12 left-6 md:left-8 max-w-[280px] md:max-w-sm opacity-0 translate-y-5 pointer-events-none z-20">
-                  <p className="text-white/60 text-xs md:text-lg leading-relaxed font-medium drop-shadow-lg">
-                    {project.description}
-                  </p>
+                    <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* Arrow CTA */}
+                  <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-white/30 transition-all duration-300 shrink-0">
+                    <svg
+                      className="w-5 h-5 transform transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4 19.5L19.5 4M19.5 4H10M19.5 4V13.5"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </div>
-          );
-        })}
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
