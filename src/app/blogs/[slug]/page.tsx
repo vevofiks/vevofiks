@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.excerpt,
       type: "article",
       publishedTime: post.publishedAt,
-      url: `https://vevofiks.com/blog/${post.slug}`,
+      url: `https://vevofiks.com/blogs/${post.slug}`,
       images: [
         {
           url: post.image,
@@ -252,7 +252,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             "description": post.excerpt,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://vevofiks.com/blog/${post.slug}`
+              "@id": `https://vevofiks.com/blogs/${post.slug}`
             }
           })
         }}
@@ -268,7 +268,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Breadcrumbs & Back Link */}
           <div className="flex items-center justify-between mb-12">
             <Link 
-              href="/blog"
+              href="/blogs"
               className="inline-flex items-center gap-2 text-xs font-semibold text-gray-400 hover:text-white transition-colors duration-300 group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -277,7 +277,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="w-3 h-3" />
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blogs" className="hover:text-white transition-colors">Blog</Link>
             </div>
           </div>
 
@@ -367,7 +367,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {relatedPosts.map((rPost) => (
                   <Link 
                     key={rPost.slug}
-                    href={`/blog/${rPost.slug}`}
+                    href={`/blogs/${rPost.slug}`}
                     className="group flex flex-col justify-between relative border border-white/10 rounded-2xl overflow-hidden bg-black/40 backdrop-blur-3xl hover:border-blue-500/30 transition-all duration-500"
                   >
                     <div className="p-6">

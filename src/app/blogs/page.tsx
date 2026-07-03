@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog & Digital Insights | Vevofiks",
     description: "Read our latest articles on web performance, CRO, SaaS engineering, and white-label agency growth strategies.",
-    url: "https://vevofiks.com/blog",
+    url: "https://vevofiks.com/blogs",
     type: "website",
   }
 };
@@ -50,7 +50,7 @@ export default function BlogPage() {
             <div className="mb-20">
               <h2 className="text-xs uppercase font-bold text-gray-500 tracking-widest mb-6">Latest Feature</h2>
               <Link 
-                href={`/blog/${featuredPost.slug}`}
+                href={`/blogs/${featuredPost.slug}`}
                 className="group block relative border border-white/10 rounded-3xl overflow-hidden bg-black/40 backdrop-blur-3xl hover:border-blue-500/30 hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.2)] transition-all duration-500"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -116,7 +116,7 @@ export default function BlogPage() {
                 {gridPosts.map((post) => (
                   <Link 
                     key={post.slug}
-                    href={`/blog/${post.slug}`}
+                    href={`/blogs/${post.slug}`}
                     className="group flex flex-col justify-between relative border border-white/10 rounded-3xl overflow-hidden bg-black/40 backdrop-blur-3xl hover:border-blue-500/30 hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.15)] transition-all duration-500"
                   >
                     <div>
