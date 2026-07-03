@@ -5,20 +5,6 @@ import gsap from "gsap";
 
 const PROJECTS = [
   {
-    title: "AndMedia Solutions",
-    year: "2025—2026",
-    image: "/works/andmedia.png",
-    description: "Global media planning, OOH, DOOH, transit, and airport advertising solutions.",
-    link: "https://andmedia.me/"
-  },
-  {
-    title: "Letsellr",
-    year: "2025—2026",
-    image: "/works/letsellr.jpg",
-    description: "Real estate search platform for verified PGs, hostels, and apartments.",
-    link: "https://letsellr.in/"
-  },
-  {
     title: "Flower Grid Wellness",
     year: "2025—2026",
     image: "/works/flowergrid.png",
@@ -39,6 +25,21 @@ const PROJECTS = [
     description: "Premium coffee shop website.",
     link: "https://brownbeans.vercel.app/"
   },
+  {
+    title: "Letsellr",
+    year: "2025—2026",
+    image: "/works/letsellr.jpg",
+    description: "Real estate search platform for verified PGs, hostels, and apartments.",
+    link: "https://letsellr.in/"
+  },
+  {
+    title: "AndMedia Solutions",
+    year: "2025—2026",
+    image: "/works/andmedia.png",
+    description: "Global media planning, OOH, DOOH, transit, and airport advertising solutions.",
+    link: "https://andmedia.me/"
+  },
+
   {
     title: "Cool Star Ac Services",
     year: "2026",
