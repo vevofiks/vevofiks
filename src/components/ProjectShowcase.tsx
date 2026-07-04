@@ -132,68 +132,76 @@ export default function ProjectShowcase() {
 
       if (totalCards === 0) return;
 
-      // Set initial state for all cards
-      gsap.set(cardElements[0], { y: "0%", scale: 1, rotation: 0 });
-      for (let i = 1; i < totalCards; i++) {
-        gsap.set(cardElements[i], { y: "120%", scale: 1, rotation: 0 });
-      }
+      const mm = gsap.matchMedia();
 
-      // Timeline that controls card stacking on scroll
-      const scrollTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".sticky-cards-trigger",
-          start: "top top",
-          end: `+=${window.innerHeight * (totalCards * 0.55)}`, // Snappy transition rate
-          pin: true,
-          scrub: 0.6,
-          pinSpacing: true,
-        },
-      });
+      mm.add("(min-width: 768px)", () => {
+        // Set initial state for all cards
+        gsap.set(cardElements[0], { y: "0%", scale: 1, rotation: 0 });
+        for (let i = 1; i < totalCards; i++) {
+          gsap.set(cardElements[i], { y: "120%", scale: 1, rotation: 0 });
+        }
 
-      for (let i = 0; i < totalCards - 1; i++) {
-        const currentCard = cardElements[i];
-        const nextCard = cardElements[i + 1];
-        const position = i;
-
-        if (!currentCard || !nextCard) continue;
-
-        // Current card scales down, rotates slightly and peeks out in the background
-        scrollTimeline.to(
-          currentCard,
-          {
-            scale: 0.92,
-            rotation: i % 2 === 0 ? -3 : 3,
-            y: "-8%",
-            duration: 1,
-            ease: "none",
+        // Timeline that controls card stacking on scroll
+        const scrollTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".sticky-cards-trigger",
+            start: "top top",
+            end: `+=${window.innerHeight * (totalCards * 0.55)}`, // Snappy transition rate
+            pin: true,
+            scrub: 0.6,
+            pinSpacing: true,
           },
-          position,
-        );
+        });
 
-        // Next card slides up in overlay
-        scrollTimeline.to(
-          nextCard,
-          {
-            y: "0%",
-            duration: 1,
-            ease: "none",
-          },
-          position,
-        );
-      }
+        for (let i = 0; i < totalCards - 1; i++) {
+          const currentCard = cardElements[i];
+          const nextCard = cardElements[i + 1];
+          const position = i;
 
-      // Dynamic resize syncing
-      const resizeObserver = new ResizeObserver(() => {
-        ScrollTrigger.refresh();
+          if (!currentCard || !nextCard) continue;
+
+          // Current card scales down, rotates slightly and peeks out in the background
+          scrollTimeline.to(
+            currentCard,
+            {
+              scale: 0.92,
+              rotation: i % 2 === 0 ? -3 : 3,
+              y: "-8%",
+              duration: 1,
+              ease: "none",
+            },
+            position,
+          );
+
+          // Next card slides up in overlay
+          scrollTimeline.to(
+            nextCard,
+            {
+              y: "0%",
+              duration: 1,
+              ease: "none",
+            },
+            position,
+          );
+        }
+
+        // Dynamic resize syncing
+        const resizeObserver = new ResizeObserver(() => {
+          ScrollTrigger.refresh();
+        });
+
+        if (containerRef.current) {
+          resizeObserver.observe(containerRef.current);
+        }
+
+        return () => {
+          resizeObserver.disconnect();
+          scrollTimeline.kill();
+        };
       });
-
-      if (containerRef.current) {
-        resizeObserver.observe(containerRef.current);
-      }
 
       return () => {
-        resizeObserver.disconnect();
-        scrollTimeline.kill();
+        mm.revert();
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
     },
@@ -206,7 +214,7 @@ export default function ProjectShowcase() {
       id="projects"
       className="bg-[#050505] relative w-full overflow-hidden"
     >
-      <div className="sticky-cards-trigger h-screen w-full flex flex-col justify-center items-center px-4 md:px-12 py-6 relative">
+      <div className="sticky-cards-trigger h-auto md:h-screen w-full flex flex-col justify-center items-center px-4 md:px-12 py-16 md:py-6 relative">
         
         {/* Decorative Background Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/5 rounded-full blur-[150px] pointer-events-none" />
@@ -233,14 +241,14 @@ export default function ProjectShowcase() {
         </div>
 
         {/* Pinned Card Stack Container */}
-        <div className="relative w-full max-w-5xl h-[440px] md:h-[480px] rounded-[2.5rem] z-10 mt-9">
+        <div className="relative w-full max-w-5xl h-auto md:h-[480px] flex flex-col gap-6 md:gap-0 md:block rounded-[2.5rem] z-10 mt-9">
           {PROJECTS.map((project, i) => (
             <div
               key={`${project.title}-${i}`}
               ref={(el) => {
                 cardRefs.current[i] = el;
               }}
-              className="absolute top-0 left-0 right-0 h-auto md:h-full rounded-[2rem] border border-white/10 bg-[#0c0c0c] flex flex-col md:flex-row overflow-hidden shadow-2xl p-5 md:p-8 gap-6 md:gap-8"
+              className="relative md:absolute md:top-0 md:left-0 md:right-0 h-auto md:h-full rounded-[2rem] border border-white/10 bg-[#0c0c0c] flex flex-col md:flex-row overflow-hidden shadow-2xl p-5 md:p-8 gap-6 md:gap-8"
               style={{
                 zIndex: i,
               }}
