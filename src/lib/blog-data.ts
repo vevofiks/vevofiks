@@ -26,7 +26,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Amraz Rafeeque",
       role: "Chief Technology Officer",
-      avatar: "/team/amraz.png",
+      avatar: "/team/amraz_new.png",
     },
     content: `
 # Why Website Speed is the Ultimate Conversion Multiplier
@@ -96,7 +96,7 @@ Ready to audit your website's performance and scale your conversion rates? **[Le
     author: {
       name: "Muhammad Asjad",
       role: "Lead Creative Designer",
-      avatar: "/team/asjad.png",
+      avatar: "/team/asjad_new.png",
     },
     content: `
 # The Anatomy of a SaaS Landing Page That Converts
@@ -175,7 +175,7 @@ Want to design a premium, high-converting web platform for your software? **[Boo
     author: {
       name: "Muhammad Shibili",
       role: "CEO & Strategic Lead",
-      avatar: "/team/shibili.png",
+      avatar: "/team/shibili_new.png",
     },
     content: `
 # Why Design Studios Partner with White-Label Developers

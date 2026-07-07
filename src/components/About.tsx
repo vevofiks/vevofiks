@@ -12,17 +12,17 @@ const TEAM = [
   {
     name: "Muhammad Shibili",
     role: "CEO & Strategic Lead",
-    image: "/team/shibili.png",
+    image: "/team/shibili_new.png",
   },
   {
     name: "Muhammad Asjad",
     role: "Lead Creative Designer",
-    image: "/team/asjad.png",
+    image: "/team/asjad_new.png",
   },
   {
     name: "Amraz Rafeeque",
     role: "Chief Technology Officer",
-    image: "/team/amraz.png",
+    image: "/team/amraz_new.png",
   }
 ];
 
@@ -94,7 +94,7 @@ export default function About() {
                  <img 
                    src={member.image} 
                    alt={member.name}
-                   className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0 ${activeTap === idx ? "grayscale-0 scale-110" : ""}`}
+                   className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110   group-hover:grayscale-0 ${activeTap === idx ? "grayscale-0 scale-110" : ""}`}
                  />
                  
                  {/* Premium Overlay */}
