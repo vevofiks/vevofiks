@@ -77,7 +77,7 @@ export default function Pricing() {
               </ul>
 
               <Link
-                href="https://cal.com/vevofiks-mm1vfe/30min"
+                href="https://calendly.com/vevofiks/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-full text-center py-4 rounded-full text-sm font-semibold transition-all ${plan.popular

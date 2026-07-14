@@ -46,7 +46,7 @@ export default function Hero() {
         </p>
         <div className="hero-element flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="https://cal.com/vevofiks-mm1vfe/30min"
+            href="https://calendly.com/vevofiks/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto coloredButton px-8 py-4 rounded-full text-base font-semibold"

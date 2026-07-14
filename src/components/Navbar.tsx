@@ -27,7 +27,7 @@ export default function Navbar() {
           VEV<img src="/company-logo.png" className="w-9 h-10" />FIKS
         </Link>
         <Link
-          href="https://cal.com/vevofiks-mm1vfe/30min"
+          href="https://calendly.com/vevofiks/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="coloredButton px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap"

@@ -82,7 +82,7 @@ Standard sites load massive animation frameworks that block the main thread. We 
 
 If your competitors' websites load in 3 seconds and yours loads in 800 milliseconds, you have already won the first phase of the customer journey. You have eliminated friction, gained user trust, and signaled engineering excellence.
 
-Ready to audit your website's performance and scale your conversion rates? **[Let's schedule a strategy call to optimize your tech stack](https://cal.com/vevofiks-mm1vfe/30min).**
+Ready to audit your website's performance and scale your conversion rates? **[Let's schedule a strategy call to optimize your tech stack](https://calendly.com/vevofiks/30min).**
     `
   },
   {
@@ -161,7 +161,7 @@ Never let a page simply fade out. When the user reaches the bottom, you must ask
 ## Conclusion
 Building a premium SaaS landing page requires balancing structural science and beautiful interactive design. When done right, it can double your conversions and dramatically drop your CAC.
 
-Want to design a premium, high-converting web platform for your software? **[Book a Strategy Call with the Vevofiks design team today](https://cal.com/vevofiks-mm1vfe/30min).**
+Want to design a premium, high-converting web platform for your software? **[Book a Strategy Call with the Vevofiks design team today](https://calendly.com/vevofiks/30min).**
     `
   },
   {
@@ -227,7 +227,7 @@ We’ve optimized our partnership workflow to integrate seamlessly with standard
 
 Don't let engineering bottlenecks limit the number of clients your studio can sign. Partner with a developer team that speaks design.
 
-Ready to see how we can support your agency? **[Schedule a confidential strategy call with Vevofiks today](https://cal.com/vevofiks-mm1vfe/30min).**
+Ready to see how we can support your agency? **[Schedule a confidential strategy call with Vevofiks today](https://calendly.com/vevofiks/30min).**
     `
   }
 ];

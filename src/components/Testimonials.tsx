@@ -6,42 +6,36 @@ const TESTIMONIALS = [
     quote: "Vevofiks helped us bridge the gap between producers and buyers globally. The platform is intuitive and handled our complex scaling needs perfectly.",
     name: "Michael Chen",
     role: "Founder, Grainora",
-    image: "https://i.pravatar.cc/150?u=grainora",
     category: "B2B Platform"
   },
   {
     quote: "Our online presence finally matches the quality of our coffee. The animations and speed are exactly what we needed to stand out in a crowded market.",
     name: "Sarah Williams",
     role: "Owner, Brown Beans Coffee",
-    image: "https://i.pravatar.cc/150?u=brownbeans",
     category: "E-Commerce"
   },
   {
     quote: "The wellness space is competitive, but our new site gives us a major edge. Vevofiks' focus on strategy-led design is truly unmatched.",
     name: "Dr. Elena Frost",
     role: "Director, Flower Grid Wellness",
-    image: "https://i.pravatar.cc/150?u=flowergrid",
     category: "Wellness"
   },
   {
     quote: "A minimalist masterpiece. They captured my vision perfectly and delivered a portfolio that has already helped me land new international clients.",
     name: "Arrham Rafeeque",
     role: "Creative Lead, Arrham Group",
-    image: "https://i.pravatar.cc/150?u=arrham",
     category: "Portfolio"
   },
   {
     quote: "Our AC service booking process is now 100% digital and seamless. Our customers love the new interface and it's boosted our efficiency.",
     name: "James Wilson",
     role: "Manager, Cool Star AC",
-    image: "https://i.pravatar.cc/150?u=coolstar",
     category: "Service Platform"
   },
   {
     quote: "The AI automation they built has eliminated hundreds of hours of manual work. It's been a game-changer for our enterprise workflows.",
     name: "Robert Vance",
     role: "Ops Lead, AI Automation Agent",
-    image: "https://i.pravatar.cc/150?u=aiagent",
     category: "AI / SaaS"
   }
 ];
@@ -50,13 +44,11 @@ const firstRow = TESTIMONIALS.slice(0, TESTIMONIALS.length / 2);
 const secondRow = TESTIMONIALS.slice(TESTIMONIALS.length / 2);
 
 const ReviewCard = ({
-  image,
   name,
   role,
   quote,
   category,
 }: {
-  image: string;
   name: string;
   role: string;
   quote: string;
@@ -77,15 +69,11 @@ const ReviewCard = ({
       <blockquote className="text-sm text-gray-300 leading-relaxed mb-6 grow">
         "{quote}"
       </blockquote>
-      <div className="flex flex-row items-center gap-4 mt-auto">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="rounded-full object-cover" width="40" height="40" alt={name} src={image} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-bold text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium text-gray-500">{role}</p>
-        </div>
+      <div className="flex flex-col mt-auto">
+        <figcaption className="text-sm font-bold text-white">
+          {name}
+        </figcaption>
+        <p className="text-xs font-medium text-gray-500">{role}</p>
       </div>
     </figure>
   );

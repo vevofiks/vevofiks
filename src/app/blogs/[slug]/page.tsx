@@ -342,7 +342,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="https://cal.com/vevofiks-mm1vfe/30min"
+                href="https://calendly.com/vevofiks/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="coloredButton px-8 py-3.5 rounded-full text-sm font-semibold inline-flex items-center gap-2 group/btn"

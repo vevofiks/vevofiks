@@ -52,8 +52,8 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <p>&copy; {new Date().getFullYear()} Vevofiks. All rights reserved.</p>
             <div className="flex items-center  gap-6">
-              <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
           </div>
 

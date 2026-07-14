@@ -14,14 +14,14 @@ const PROJECTS = [
     link: "https://flowergrid.co.uk",
     category: "Creative & Wellness",
   },
-  {
-    title: "Tdot Cafe",
-    year: "2025—2026",
-    image: "/works/tdotcafe.png",
-    description: "Premium dining experience and gourmet coffee shop website.",
-    link: "https://tdot-cafe.vercel.app/",
-    category: "Creative & Brand",
-  },
+  // {
+  //   title: "Tdot Cafe",
+  //   year: "2025—2026",
+  //   image: "/works/tdotcafe.png",
+  //   description: "Premium dining experience and gourmet coffee shop website.",
+  //   link: "https://tdot-cafe.vercel.app/",
+  //   category: "Creative & Brand",
+  // },
   {
     title: "Grainora",
     year: "2025—2026",
