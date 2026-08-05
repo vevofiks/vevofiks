@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Vevofiks | High-Performance Design & Engineering Studio",
+  title: "Vevofiks | White-Label Development Partner for Agencies & Growing Businesses",
   description: "Vevofiks helps businesses scale revenue with strategy-led websites, high-converting landing pages, and custom SaaS development. Transform your digital presence today.",
   keywords: ["Vevofiks", "Web Design Agency", "Conversion Optimization", "Next.js Development", "SaaS Development", "AI Automation Agent", "Web Development Studio", "UI/UX Design"],
   authors: [{ name: "Vevofiks Team" }],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://vevofiks.com",
-    title: "Vevofiks | Strategy-Led Design & Engineering",
+    title:"Vevofiks | White-Label Development Partner for Agencies & Growing Businesses",
     description: "Engineering high-performance digital products that scale businesses. Conversion-focused websites and custom web applications.",
     siteName: "Vevofiks",
     images: [
