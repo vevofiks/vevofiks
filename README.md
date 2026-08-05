@@ -1,6 +1,6 @@
 # Vevofiks — Software Development Company
 
-> **Engineering high-performance digital products that scale businesses.**
+> **White-Label Development Partner for Agencies & Growing Businesses**
 
 Vevofiks is a Software Development Company specializing in strategy-led websites, high-converting landing pages, and custom SaaS development. We eliminate the friction between brands and their customers through world-class engineering and premium aesthetics.
 
